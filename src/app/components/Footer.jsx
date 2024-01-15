@@ -12,14 +12,14 @@ export default function Home() {
     <>
     <footer className="h-[230px] w-full mt-auto   bg-[#050512] text-white">
       <div className="container mx-auto py-3">
-      <div className="flex font-serif tracking-wider text-xl">
-        <section className="flex gap-0 w-1/2">
+      <div className="flex font-serif tracking-wider md:text-xl text-sm">
+        <section className="flex pr-2 w-1/2">
           <div>
-            <img src="https://www.osmoze.in/images/Osmoze.svg" alt=""  className="h-[160px]"/>
+            <img src="https://www.osmoze.in/images/Osmoze.svg" alt=""  className="h-[160px] "/>
           </div>
-          <div className="flex flex-col justify-center align-middle gap-y-8">
-            <h1 className="text-2xl">
-              Osmoze'24
+          <div className="flex flex-col text-base md:text-2xl justify-center align-middle gap-y-5 md:gap-y-8">
+            <h1 className="text-xl  md:text-2xl">
+              Osmoze&apos;24
             </h1>
             <p className="">
               The Annual 
@@ -27,8 +27,8 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section className=" w-1/2 flex flex-col justify-center align-middle gap-5 mr-10">
-          <div className="flex md:gap-x-[8rem] md:mt-5 gap-x-4 md:justify-end">
+        <section className=" w-1/2 pl-2 flex flex-col justify-center align-middle gap-y-5 md:gap-5 mr-10">
+          <div className="flex md:gap-x-[8rem] mt-3 md:mt-5 gap-x-2 md:justify-end">
             <p>
               Contact Us
             </p>
@@ -39,20 +39,20 @@ export default function Home() {
              XXXXXXXXXX
             </p>
           </div>
-          <div className="flex flex-col justify-center md:flex-row md:gap-x-[8rem] md:justify-end ">
-            <p className=''>
+          <div className="flex flex-col mb-3  md:flex-row md:gap-x-[8rem] md:justify-end ">
+            <p className='flex justify-center mb-1'>
               Follow Us
             </p>
-            <div className="flex md:gap-x-[4.5rem]">
-             <a href=""><Image src={facebook} width="" height="" /></a
-             ><a href="https://www.instagram.com/sochem_iitbhu/"><Image src={instagram} width="" height="" /></a>
+            <div className="flex gap-x-[2rem] md:gap-x-[4.5rem] justify-center ">
+             <a href=""><Image src={facebook} width="" height="" /></a>
+             <a href="https://www.instagram.com/sochem_iitbhu/"><Image src={instagram} width="" height="" /></a>
              <a href="https://www.linkedin.com/in/sochem/"><Image src={linkedin} width="" height="" /></a>
             </div>
           </div>
         </section>
       </div>
-      <hr className='border-[1.5px] border-sky-400 shadow-md' />
-      <div className=' mt-4 text-center text-sm'>
+      <hr className='mt-5 md:mt-0 border-[1.5px] border-sky-400 shadow-md' />
+      <div className='mt-2 md:mt-4 text-center text-sm'>
       <p>&#169; 2023 All Rights Reserved</p>
       </div>
       </div>
