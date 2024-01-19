@@ -2,6 +2,8 @@ import Image from 'next/image';
 import facebook from '../image/facebook2.png';
 import instagram from '../image/insta.png';
 import linkedin from '../image/linkedin2.png';
+// import osmoze from '../image/osmoze.png';
+
 
 
 
@@ -10,12 +12,14 @@ export default function Home() {
   
   return (
     <>
-    <footer className="h-[230px] w-full mt-auto   bg-[#050512] text-white">
+    <footer className="h-[230px] w-full mt-auto   bg-[#07000B] text-white">
       <div className="container mx-auto py-3">
-      <div className="flex font-serif tracking-wider md:text-xl text-sm">
-        <section className="flex pr-2 w-1/2">
+      <div className="flex text-[#8DD5FF] font-serif tracking-wider md:text-xl text-sm">
+        <section className="flex pr-2 ml-2 w-1/2">
           <div>
+            
             <img src="https://www.osmoze.in/images/Osmoze.svg" alt=""  className="h-[160px] "/>
+            
           </div>
           <div className="flex flex-col text-base md:text-2xl justify-center align-middle gap-y-5 md:gap-y-8">
             <h1 className="text-xl  md:text-2xl">
@@ -32,10 +36,10 @@ export default function Home() {
             <p>
               Contact Us
             </p>
-            <p className='text-base'>
+            <p className='text-base text-white'>
               abc
             </p>
-            <p className='font-mono text-base'>
+            <p className='font-mono text-base text-white'>
              XXXXXXXXXX
             </p>
           </div>
@@ -44,9 +48,9 @@ export default function Home() {
               Follow Us
             </p>
             <div className="flex gap-x-[2rem] md:gap-x-[4.5rem] justify-center ">
-             <a href=""><Image src={facebook} width="" height="" /></a>
-             <a href="https://www.instagram.com/sochem_iitbhu/"><Image src={instagram} width="" height="" /></a>
-             <a href="https://www.linkedin.com/in/sochem/"><Image src={linkedin} width="" height="" /></a>
+             <a href="https://www.facebook.com/Sochem.iitbhu/"><Image src={facebook} width="" height="" alt=""/></a>
+             <a href="https://www.instagram.com/sochem_iitbhu/"><Image src={instagram} width="" height="" alt=""/></a>
+             <a href="https://www.linkedin.com/in/sochem/"><Image src={linkedin} width="" height="" alt=""/></a>
             </div>
           </div>
         </section>
