@@ -39,7 +39,7 @@ const page = () => {
 </section > 
 <section className='w-4/5 h-[100vh] bg-[#86B6F6] flex flex-col'>
 
-profile
+Event Registration
 </section>
 </div>
   
