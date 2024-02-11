@@ -80,6 +80,9 @@ const SignIn = () => {
             </div>
           </div>
         ));
+        setTimeout(() => {
+          router.push("/signUp");
+        }, 5000);
       } else {
         router.push("/");
       }
