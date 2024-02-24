@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
-
-
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { AuthContextProvider } from "./firebase/page";
+import { Toaster } from "react-hot-toast";
 import "./styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -12,12 +14,35 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className='flex flex-col m-0 min-h-screen' >
-        
-        {children}
-       
-
-      </body>
+      <AuthContextProvider>
+        <body className="flex flex-col m-0 min-h-screen">
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+        <div>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+            toastOptions={{
+              success: {
+                duration: 2000,
+              },
+              // error: {
+              //   duration: 5000,
+              // },
+              style: {
+                fontSize: "16px",
+                maxWidth: "500px",
+                padding: "16px 24px",
+                backgroundColor: "#fff",
+                color: "#374151",
+                marginBottom: "3px",
+              },
+            }}
+          />
+        </div>
+      </AuthContextProvider>
     </html>
   );
 }
