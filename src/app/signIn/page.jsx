@@ -4,7 +4,7 @@ import { signInWithGoogle } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { UserAuth } from "../firebase/page";
 import { signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../firebase";
+import { auth, provider } from "../../../firebase";
 import UserDataService from "../Services/page.js";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";

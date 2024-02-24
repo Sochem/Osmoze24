@@ -6,7 +6,7 @@ import UserDataService from "../Services/page.js";
 import { UserAuth } from "../firebase/page";
 import { useRouter } from "next/navigation";
 import { signInWithPopup } from "firebase/auth";
-import { auth, provider } from "../firebase";
+import { auth, provider } from "../../../firebase.js";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 import Image from "next/image.js";
