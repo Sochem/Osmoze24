@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { useEffect, useState } from "react";
-import UserDataService from "../Services/page.js";
-import { UserAuth } from "../firebase/page.js";
+import UserDataService from "../Services/services.js";
+import { UserAuth } from "../firebase/firebaseConfig.js";
 import Cookies from "js-cookie";
 import EditModal from "../ui/EditModal.jsx";
 const Page = () => {
