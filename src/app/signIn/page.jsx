@@ -8,6 +8,7 @@ import { auth, provider } from "../../../firebase";
 import UserDataService from "../Services/services.js";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
+import Osmoze from '../image/osmoze.png';
 import Image from "next/image";
 const SignIn = () => {
   // For Email and Password!
@@ -163,7 +164,7 @@ const SignIn = () => {
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
           <div className="flex flex-col items-center justify-center">
             <Image
-              src="https://www.osmoze.in/images/Osmoze.svg"
+              src={Osmoze}
               // className="w-40 h-40"
               alt="osmoze"
               width={160}
