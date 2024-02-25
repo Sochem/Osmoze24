@@ -18,7 +18,7 @@ export default function Home() {
         <section className="flex  w-1/2">
           <div>
             
-            {/* <img src="https://www.osmoze.in/images/Osmoze.svg" alt=""  className="h-[160px] "/> */}
+
             <Image src={osmoze} alt='' height='' width=''/>
             
           </div>
