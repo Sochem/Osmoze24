@@ -63,10 +63,7 @@ const Page = () => {
 
     <div className=' font-serif flex m-0'>
     <Page2/>
-</div>
-  
-
-      <table striped bordered hover size="sm">
+    <table striped bordered hover size="sm">
         <thead>
           <tr>
             <th>#</th>
@@ -111,6 +108,10 @@ const Page = () => {
         </tbody>
       </table>
 
+</div>
+  
+
+      
     </>
   );
 };

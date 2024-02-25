@@ -11,6 +11,11 @@ const page = () => {
     <>
     <div className=' font-serif flex m-0'>
     <Page/>
+    <section>
+      <h2>
+        Event registration
+      </h2>
+    </section>
 </div>
   
     </>
