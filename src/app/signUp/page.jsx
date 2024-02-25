@@ -2,8 +2,8 @@
 import React from "react";
 import { useEffect } from "react";
 import Link from "next/link";
-import UserDataService from "../Services/page.js";
-import { UserAuth } from "../firebase/page";
+import UserDataService from "../Services/services.js";
+import { UserAuth } from "../firebase/firebaseConfig.js";
 import { useRouter } from "next/navigation";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../../firebase.js";

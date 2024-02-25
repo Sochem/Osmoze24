@@ -2,10 +2,10 @@
 import { useState, useEffect } from "react";
 import { signInWithGoogle } from "firebase/auth";
 import { useRouter } from "next/navigation";
-import { UserAuth } from "../firebase/page";
+import { UserAuth } from "../firebase/firebaseConfig";
 import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../../firebase";
-import UserDataService from "../Services/page.js";
+import UserDataService from "../Services/services.js";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 import Image from "next/image";
