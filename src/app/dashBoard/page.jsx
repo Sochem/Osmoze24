@@ -35,7 +35,7 @@ const page = () => {
           Registered event
         </h2>
       </div>
-      <div className='ml-10 p-2 mr-10 pt-4 w-[70vw] bg-[#8DD5FF] text-black text-xl'>
+      <div className='ml-10 p-2 mr-10 pt-4  bg-[#8DD5FF] text-black text-xl'>
         Events
       </div>
       <div className='p-2 ml-10 mr-10 text-xl bg-[#07000B] text-[#BDE8F6]'>
