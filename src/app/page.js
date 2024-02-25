@@ -1,10 +1,14 @@
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import "./styles/globals.css";
 
 export default function Home() {
   return (
-    <main className=" flex m-0   min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <h1>Home Page</h1>
-      </div>
-    </main>
+    <>
+    <body className='flex flex-col m-0 min-h-screen' >
+      <Navbar/>
+      <Footer/>
+    </body>
+   </>
   );
 }

@@ -1,4 +1,8 @@
+
+
+
 "use client";
+import Page2 from '../dashBoard2/Page.jsx'
 import React from "react";
 import { useEffect, useState } from "react";
 import UserDataService from "../Services/services.js";
@@ -22,6 +26,7 @@ const Page = () => {
     isModalOpen,
     setIsModalOpen,
   } = UserAuth();
+
 
   useEffect(() => {
     const getUser = async () => {
@@ -55,7 +60,10 @@ const Page = () => {
 
   return (
     <>
-      <table striped bordered hover size="sm">
+
+    <div className=' font-serif flex m-0'>
+    <Page2/>
+    <table striped bordered hover size="sm">
         <thead>
           <tr>
             <th>#</th>
@@ -99,6 +107,11 @@ const Page = () => {
           })}
         </tbody>
       </table>
+
+</div>
+  
+
+      
     </>
   );
 };
