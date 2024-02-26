@@ -6,7 +6,7 @@ import "firebase/firestore";
 
 const AuthContext = createContext();
 
-export const AuthContextProvider = ({ children }) => {
+const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState("");
   const [userName, setUserName] = useState("");
@@ -64,6 +64,8 @@ export const AuthContextProvider = ({ children }) => {
   );
 };
 
-export const UserAuth = () => {
+const UserAuth = () => {
   return useContext(AuthContext);
 };
+
+export { AuthContextProvider , UserAuth };

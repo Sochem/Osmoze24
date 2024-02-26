@@ -1,11 +1,17 @@
-import React from 'react';
+import React from 'react'
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const page = () => {
   return (
-    <div>
-      team
+    <div className='flex flex-col m-0 min-h-screen'>
+      <Navbar/>
+      
+
+      Team
+      <Footer/>
     </div>
   )
 }
 
-export default page;
+export default page

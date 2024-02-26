@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { AuthContextProvider } from "./firebase/page";
+import { AuthContextProvider } from "./firebase/firebaseConfig";
 import { Toaster } from "react-hot-toast";
 import "./styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
@@ -16,9 +16,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <AuthContextProvider>
         <body className="flex flex-col m-0 min-h-screen">
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </body>
         <div>
           <Toaster
