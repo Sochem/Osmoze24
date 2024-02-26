@@ -8,6 +8,8 @@ import toast from "react-hot-toast";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import Image from "next/image";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer.jsx";
 const Page = () => {
   const {
     userName,
@@ -67,6 +69,7 @@ const Page = () => {
   }, [setUsers]);
   return (
     <div>
+      <Navbar />
       <main className="flex text-center px-20 mt-10 flex-col  items-center justify-center ">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
           <div className="flex flex-col items-center justify-center">
@@ -187,6 +190,7 @@ const Page = () => {
           </button>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };

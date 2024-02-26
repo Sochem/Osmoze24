@@ -2,10 +2,10 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import EventService from "../Services/event.js";
-import { UserAuth } from "../firebase/page";
+import { UserAuth } from "../firebase/firebaseConfig";
 import toast from "react-hot-toast";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../../../firebase";
 import "../styles/modalWindow.css";
 const EventCard = ({ isOpen, id }) => {
   const { events, setEvents, isModalOpen, setIsModalOpen } = UserAuth();

@@ -3,27 +3,14 @@ body {
   font-family: "Dongle", sans-serif;
   margin: 0;
   padding: 0;
+  // height: 100%;
 }
 
-.text-container {
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  color: white;
-  opacity: 0.8;
-  user-select: none;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
-}
 .background-container {
   position: relative;
   flex-grow: 1;
+  // width: 100%;
+  // min-height: 100vh;
 }
 
 .children-container {
@@ -60,7 +47,6 @@ body {
   // --color5: 85, 85, 237;
   --color-interactive: 84, 36, 229;
   --circle-size: 80%;
-  // --circle-size: 80%;
   --blending: hard-light;
 }
 .gradient-bg {

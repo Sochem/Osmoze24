@@ -1,8 +1,10 @@
 "use client";
 import EventCard from "../ui/EventCard";
-import { UserAuth } from "../firebase/page";
+import { UserAuth } from "../firebase/firebaseConfig";
 import React, { useState, useEffect } from "react";
 import EventDataService from "../Services/event.js";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 const Page = () => {
   const {
     events,
@@ -32,26 +34,30 @@ const Page = () => {
     setEventId(id);
   };
   return (
-    <div>
-      {events.map((doc, index) => {
-        return (
-          <>
-            <h2>{doc.event_name}</h2>
-            <button
-              onClick={(e) => {
-                handleId(doc.id);
+    <div className="flex flex-col m-0 min-h-screen">
+      <Navbar />
+      <div>
+        {events?.map((doc, index) => {
+          return (
+            <>
+              <h2>{doc.event_name}</h2>
+              <button
+                onClick={(e) => {
+                  handleId(doc.id);
 
-                openModal(e);
-              }}
-              className="border border-white rounded-sm ml-2 p-2"
-            >
-              Read More
-            </button>
+                  openModal(e);
+                }}
+                className="border border-white rounded-sm ml-2 p-2"
+              >
+                Read More
+              </button>
 
-            <EventCard isOpen={isModalOpen} id={eventId} />
-          </>
-        );
-      })}
+              <EventCard isOpen={isModalOpen} id={eventId} />
+            </>
+          );
+        })}
+      </div>
+      <Footer />
     </div>
   );
 };

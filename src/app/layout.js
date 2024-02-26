@@ -21,9 +21,9 @@ export default function RootLayout({ children }) {
         <body className="flex flex-col m-0 min-h-screen">
           {/* <Navbar /> */}
 
-          <div className="background-container">
+          <div className="background-container ">
             <BackgroundEffect />
-            <div className="children-container">{children}</div>
+            <div className="children-container ">{children}</div>
           </div>
 
           {/* <Footer /> */}

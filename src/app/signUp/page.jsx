@@ -10,6 +10,8 @@ import { auth, provider } from "../../../firebase.js";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 import Image from "next/image.js";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 export default function Page() {
   const {
     userName,
@@ -120,8 +122,9 @@ export default function Page() {
   }, [setUsers]);
 
   return (
-    <div>
-      <main className="flex text-center px-20 mt-10 mb-10 flex-col  items-center justify-center ">
+    <div className="m-0 min-h-screen">
+      <Navbar />
+      <main className="flex text-center px-20 mt-10 mb-10 flex-col  items-center justify-center m-0 min-h-screen">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
           <div className="flex flex-col items-center justify-center">
             <Image
@@ -223,23 +226,6 @@ export default function Page() {
                 required
               />
             </div>
-            {/* <div className="mb-4 text-left">
-            <label
-              htmlFor="phone"
-              className="block text-gray-700 text-sm font-bold mb-2"
-            >
-              PHONE NUMBER
-            </label>
-            <input
-              type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              placeholder="123-456-7890"
-              required
-              className="w-full p-2 border border-gray-300 text-black rounded"
-            />
-          </div> */}
             <button
               onClick={handleSubmit}
               type="submit"
@@ -260,6 +246,7 @@ export default function Page() {
           </div>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }
