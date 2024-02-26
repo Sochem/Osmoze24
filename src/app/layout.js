@@ -20,8 +20,14 @@ export default function RootLayout({ children }) {
       <AuthContextProvider>
         <body className="flex flex-col m-0 min-h-screen">
           {/* <Navbar /> */}
-          {children}
+
+          <div className="background-container">
+            <BackgroundEffect />
+            <div className="children-container">{children}</div>
+          </div>
+
           {/* <Footer /> */}
+          <Script src="script.js"></Script>
         </body>
 
         <Toaster
