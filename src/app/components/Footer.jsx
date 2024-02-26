@@ -2,7 +2,7 @@ import Image from 'next/image';
 import facebook from '../image/facebook2.png';
 import instagram from '../image/insta.png';
 import linkedin from '../image/linkedin2.png';
-// import osmoze from '../image/osmoze.png';
+import osmoze from '../image/osmoze.png';
 
 
 
@@ -12,13 +12,14 @@ export default function Home() {
   
   return (
     <>
-    <footer className="h-[230px] w-full mt-auto   bg-[#07000B] text-white">
+    <footer className="h-[280px] w-full mt-auto   bg-[#07000B] text-white">
       <div className="container mx-auto py-3">
       <div className="flex text-[#8DD5FF] font-serif tracking-wider md:text-xl text-sm">
-        <section className="flex pr-2 ml-2 w-1/2">
+        <section className="flex  w-1/2">
           <div>
             
-            <img src="https://www.osmoze.in/images/Osmoze.svg" alt=""  className="h-[160px] "/>
+
+            <Image src={osmoze} alt='' height='' width=''/>
             
           </div>
           <div className="flex flex-col text-base md:text-2xl justify-center align-middle gap-y-5 md:gap-y-8">

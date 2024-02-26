@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { UserAuth } from "../firebase/page";
-import UserDataService from "../Services/page.js";
+import { UserAuth } from "../firebase/firebaseConfig";
+import UserDataService from "../Services/services.js";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { useEffect } from "react";

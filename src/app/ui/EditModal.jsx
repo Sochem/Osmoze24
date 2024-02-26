@@ -2,8 +2,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
-import { UserAuth } from "../firebase/page";
-import UserDataService from "../Services/page.js";
+import { UserAuth } from "../firebase/firebaseConfig";
+import UserDataService from "../Services/services.js";
 const EditModal = ({ isOpen }) => {
   const {
     userName,

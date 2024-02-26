@@ -1,15 +1,14 @@
 "use client";
 import { useContext, createContext, useState } from "react";
 import { signInWithPopup, signOut, GoogleAuthProvider } from "firebase/auth";
-import { auth } from "../firebase";
+import { auth } from "../../../firebase";
 import "firebase/firestore";
 
 const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
   const [userId, setUserId] = useState("");
-  const [eventId, setEventId] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [branch, setBranch] = useState("");
@@ -17,7 +16,6 @@ const AuthContextProvider = ({ children }) => {
   const [message, setMessage] = useState({ error: false, msg: "" });
   const [currentUserId, setCurrentUserId] = useState("");
   const [users, setUsers] = useState([]);
-  const [events, setEvents] = useState([]);
   const [year, setYear] = useState("");
   const [phone, setPhone] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,10 +57,6 @@ const AuthContextProvider = ({ children }) => {
         setPhone,
         isModalOpen,
         setIsModalOpen,
-        events,
-        setEvents,
-        eventId,
-        setEventId,
       }}
     >
       {children}
@@ -73,4 +67,5 @@ const AuthContextProvider = ({ children }) => {
 const UserAuth = () => {
   return useContext(AuthContext);
 };
-export { UserAuth, AuthContextProvider };
+
+export { AuthContextProvider, UserAuth };
