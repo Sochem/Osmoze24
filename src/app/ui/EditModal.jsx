@@ -10,7 +10,6 @@ const EditModal = ({ isOpen }) => {
     setUserName,
     email,
     setEmail,
-
     branch,
     setBranch,
     year,
@@ -23,11 +22,6 @@ const EditModal = ({ isOpen }) => {
     isModalOpen,
     setIsModalOpen,
   } = UserAuth();
-
-  // const handleSave = () => {
-  //   onSave(formData);
-  //   closeModal();
-  // };
 
   const closeModal = (e) => {
     console.log("closing");

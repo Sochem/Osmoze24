@@ -31,15 +31,6 @@ const Page = () => {
     };
     getUser();
   }, []);
-  // const updateUserData = async (id) => {
-  //   await UserDataService.updateUser(id, { userName: "shruti" });
-  // };
-
-  // const deleteHandler = async (id) => {
-  //   await UserDataService.deleteUser(id);
-  //   getUser();
-  // };
-
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -67,7 +58,6 @@ const Page = () => {
         </thead>
         <tbody>
           {users.map((doc, index) => {
-            // console.log(doc)
             if (doc.id == Cookies.get("User")) {
               return (
                 <tr key={index + 1}>
@@ -85,13 +75,6 @@ const Page = () => {
                       Edit Data
                     </button>
                     <EditModal isOpen={isModalOpen} />
-                    {/* <button
-                      variant="danger"
-                      className="delete"
-                      onClick={(e) => deleteHandler(doc.id)}
-                    >
-                      Delete
-                    </button> */}
                   </td>
                 </tr>
               );

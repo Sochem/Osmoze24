@@ -6,9 +6,10 @@ import "firebase/firestore";
 
 const AuthContext = createContext();
 
-export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+const AuthContextProvider = ({ children }) => {
+  const [user, setUser] = useState("");
   const [userId, setUserId] = useState("");
+  const [eventId, setEventId] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [branch, setBranch] = useState("");
@@ -16,6 +17,7 @@ export const AuthContextProvider = ({ children }) => {
   const [message, setMessage] = useState({ error: false, msg: "" });
   const [currentUserId, setCurrentUserId] = useState("");
   const [users, setUsers] = useState([]);
+  const [events, setEvents] = useState([]);
   const [year, setYear] = useState("");
   const [phone, setPhone] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -57,6 +59,10 @@ export const AuthContextProvider = ({ children }) => {
         setPhone,
         isModalOpen,
         setIsModalOpen,
+        events,
+        setEvents,
+        eventId,
+        setEventId,
       }}
     >
       {children}
@@ -64,6 +70,7 @@ export const AuthContextProvider = ({ children }) => {
   );
 };
 
-export const UserAuth = () => {
+const UserAuth = () => {
   return useContext(AuthContext);
 };
+export { UserAuth, AuthContextProvider };

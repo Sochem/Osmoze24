@@ -73,7 +73,7 @@ const SignIn = () => {
                     router.push("/signUp");
                   }, 500);
                 }}
-                className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none "
               >
                 Close
               </button>
@@ -176,7 +176,7 @@ const SignIn = () => {
             <span className="text-black text-xs">SIGN IN WITH</span>
             <button
               onClick={SignInWithGoogle}
-              className="text-black text-sm m-2 flex mb-5 border border-2 border-gray-300 rounded-md shadow-md hover:shadow-lg hover:text-blue-600  py-1 px-2"
+              className="text-black text-sm m-2 flex mb-5  border-2 border-gray-300 rounded-md shadow-md hover:shadow-lg hover:text-blue-600  py-1 px-2"
             >
               <Image
                 alt="..."
