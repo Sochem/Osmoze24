@@ -1,10 +1,10 @@
 "use client"
 import React from 'react';
 import Osmoze from '../image/osmoze.png';
-import Link from 'next/link';
-import signIn from '../../../src/app/signIn/page.jsx'
-
 import Image from 'next/image';
+import Link from 'next/link';
+
+
 
 const Navbar = () => {
   return (
