@@ -14,11 +14,11 @@ const page = () => {
 
   return (
     <>
-    <div className=' font-serif flex m-0'>
+    <div className=' font-serif lg:flex flex flex-col lg:flex-row  m-0'>
     
       <Page/>
     
-<section className='w-4/5 h-[100vh] bg-[#86B6F6] flex flex-col'>
+<section className='lg:w-4/5 h-[100vh] bg-[#86B6F6] flex lg:flex-col'>
 
 <div className='p-6 '>
       <div className='flex justify-between'>
