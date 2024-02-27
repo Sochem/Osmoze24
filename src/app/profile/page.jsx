@@ -1,4 +1,8 @@
+
+
+
 "use client";
+import Page2 from '../dashBoard2/Page.jsx'
 import React from "react";
 import { useEffect, useState } from "react";
 import UserDataService from "../Services/services.js";
@@ -23,6 +27,7 @@ const Page = () => {
     setIsModalOpen,
   } = UserAuth();
 
+
   useEffect(() => {
     const getUser = async () => {
       const data = await UserDataService.getAllUser();
@@ -31,15 +36,6 @@ const Page = () => {
     };
     getUser();
   }, []);
-  // const updateUserData = async (id) => {
-  //   await UserDataService.updateUser(id, { userName: "shruti" });
-  // };
-
-  // const deleteHandler = async (id) => {
-  //   await UserDataService.deleteUser(id);
-  //   getUser();
-  // };
-
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -55,7 +51,10 @@ const Page = () => {
 
   return (
     <>
-      <table striped bordered hover size="sm">
+
+    <div className=' font-serif flex m-0'>
+    <Page2/>
+    <table striped bordered hover size="sm">
         <thead>
           <tr>
             <th>#</th>
@@ -67,7 +66,6 @@ const Page = () => {
         </thead>
         <tbody>
           {users.map((doc, index) => {
-            // console.log(doc)
             if (doc.id == Cookies.get("User")) {
               return (
                 <tr key={index + 1}>
@@ -85,13 +83,6 @@ const Page = () => {
                       Edit Data
                     </button>
                     <EditModal isOpen={isModalOpen} />
-                    {/* <button
-                      variant="danger"
-                      className="delete"
-                      onClick={(e) => deleteHandler(doc.id)}
-                    >
-                      Delete
-                    </button> */}
                   </td>
                 </tr>
               );
@@ -99,6 +90,11 @@ const Page = () => {
           })}
         </tbody>
       </table>
+
+</div>
+  
+
+      
     </>
   );
 };

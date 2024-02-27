@@ -8,7 +8,11 @@ import { auth, provider } from "../../../firebase";
 import UserDataService from "../Services/services.js";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
+import Osmose from "../image/osmoze2.png";
 import Image from "next/image";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer.jsx";
+import Google from '../image/google.svg'
 const SignIn = () => {
   // For Email and Password!
   const router = useRouter();
@@ -73,7 +77,7 @@ const SignIn = () => {
                     router.push("/signUp");
                   }, 500);
                 }}
-                className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none "
               >
                 Close
               </button>
@@ -158,12 +162,13 @@ const SignIn = () => {
   }, [user]);
 
   return (
-    <>
-      <main className="flex text-center px-20 mt-10 mb-10 flex-col  items-center justify-center ">
-        <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
+    <div className="flex flex-col m-0 min-h-screen">
+      <Navbar />
+      <main className="flex text-center px-20 mt-5 mb-10 flex-col  items-center justify-center ">
+        <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md ">
           <div className="flex flex-col items-center justify-center">
             <Image
-              src="https://www.osmoze.in/images/Osmoze.svg"
+              src={Osmose}
               // className="w-40 h-40"
               alt="osmoze"
               width={160}
@@ -176,12 +181,12 @@ const SignIn = () => {
             <span className="text-black text-xs">SIGN IN WITH</span>
             <button
               onClick={SignInWithGoogle}
-              className="text-black text-sm m-2 flex mb-5 border border-2 border-gray-300 rounded-md shadow-md hover:shadow-lg hover:text-blue-600  py-1 px-2"
+              className="text-black text-sm m-2 flex mb-5  border-2 border-gray-300 rounded-md shadow-md hover:shadow-lg hover:text-blue-600  py-1 px-2"
             >
               <Image
                 alt="..."
                 className=" mr-1"
-                src="https://dashboard.technex.co.in/assets/img/google.svg"
+                src={Google}
                 width={20}
                 height={20}
               />
@@ -239,7 +244,9 @@ const SignIn = () => {
           </form>
         </div>
       </main>
-    </>
+
+      <Footer />
+    </div>
   );
 };
 

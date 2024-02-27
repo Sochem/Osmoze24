@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 // import osmoze from '../image/oszome.png';
-import Card from '../components/CardComp';
-const name=["depansh jain" , "aman sharma"]
+
 const team = () => {
   return (
   <>
@@ -117,7 +116,7 @@ const team = () => {
         <div class="bg-gray-100 p-6 rounded-lg">
           <img class="h-[200px] rounded w-[200px] object-cover object-center mb-6" src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg" alt="content"></img>
           <h3 class="tracking-widest text-indigo-500 text-lg font-medium title-font text-center	">Mrunal Bhagat</h3>
-         =
+         
         </div>
         </div>
         </section>
@@ -189,17 +188,6 @@ const team = () => {
   </div></div>
  
 </section>
-
-
-
-
-
-
-
-
-
-
-
 
 </div>
 

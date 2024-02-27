@@ -2,7 +2,7 @@ import Image from 'next/image';
 import facebook from '../image/facebook2.png';
 import instagram from '../image/insta.png';
 import linkedin from '../image/linkedin2.png';
-// import osmoze from '../image/osmoze.png';
+import osmoze from '../image/osmoze2.png';
 
 
 
@@ -12,13 +12,14 @@ export default function Home() {
   
   return (
     <>
-    <footer className="h-[230px] w-full mt-auto   bg-[#07000B] text-white">
+    <footer className="h-[280px] w-full mt-auto   bg-[#07000B] bg-opacity-70 text-white">
       <div className="container mx-auto py-3">
       <div className="flex text-[#8DD5FF] font-serif tracking-wider md:text-xl text-sm">
-        <section className="flex pr-2 ml-2 w-1/2">
-          <div>
+        <section className="flex  w-1/2">
+          <div className="p-[20px]">
             
-            <img src="https://www.osmoze.in/images/Osmoze.svg" alt=""  className="h-[160px] "/>
+
+            <Image src={osmoze} alt='' height='' width='' className='  h-[10rem] w-[10rem]'/>
             
           </div>
           <div className="flex flex-col text-base md:text-2xl justify-center align-middle gap-y-5 md:gap-y-8">
@@ -31,8 +32,8 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section className=" w-1/2 pl-2 flex flex-col justify-center align-middle gap-y-5 md:gap-5 mr-10">
-          <div className="flex md:gap-x-[8rem] mt-3 md:mt-5 gap-x-2 md:justify-end">
+        <section className=" w-1/2 pl-2 flex flex-col justify-center align-middle md:gap-y-12 gap-y-5  md:gap-6 mr-10">
+          <div className="flex md:gap-x-[8rem] mt-3 md:mt-5 gap-x-3 md:justify-end">
             <p>
               Contact Us
             </p>
