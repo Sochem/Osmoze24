@@ -8,10 +8,11 @@ import { auth, provider } from "../../../firebase";
 import UserDataService from "../Services/services.js";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
-import Osmoze from "../image/osmoze.png";
+import Osmose from "../image/osmoze2.png";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.jsx";
+import Google from '../image/google.svg'
 const SignIn = () => {
   // For Email and Password!
   const router = useRouter();
@@ -163,11 +164,11 @@ const SignIn = () => {
   return (
     <div className="flex flex-col m-0 min-h-screen">
       <Navbar />
-      <main className="flex text-center px-20 mt-10 mb-10 flex-col  items-center justify-center ">
+      <main className="flex text-center px-20 mt-5 mb-10 flex-col  items-center justify-center ">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md ">
           <div className="flex flex-col items-center justify-center">
             <Image
-              src={Osmoze}
+              src={Osmose}
               // className="w-40 h-40"
               alt="osmoze"
               width={160}
@@ -185,7 +186,7 @@ const SignIn = () => {
               <Image
                 alt="..."
                 className=" mr-1"
-                src="https://dashboard.technex.co.in/assets/img/google.svg"
+                src={Google}
                 width={20}
                 height={20}
               />
