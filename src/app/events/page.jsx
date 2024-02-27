@@ -44,7 +44,7 @@ const page = () => {
             </div>
             <p className='text-3xl m-auto text-white mb-2 ' >OsmoCross 
             </p> 
-              <div className='flex flex-row-reverse mr-2'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
             {/* First Card ends */}
@@ -62,9 +62,9 @@ const page = () => {
                 alt='events'
                 />
             </div>
-            <p className='text-3xl m-auto text-white mb-2 ' >OsmoCross 
+            <p className='text-3xl m-auto text-white mb-2 ' >OsmoClick
             </p> 
-              <div className='flex flex-row-reverse mr-2'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
 
@@ -81,16 +81,16 @@ const page = () => {
                 alt='events'
                 />
             </div>
-            <p className='text-3xl m-auto text-white mb-2 ' >OsmoCross 
+            <p className='text-3xl m-auto text-white mb-2 ' >Cricket 
             </p> 
-              <div className='flex flex-row-reverse mr-2'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
 
             </div>
 
 
-            {/* Next Row */}
+            {/* Second Row */}
 
             <div className="lg:flex lg:gap-12 mb-6">
 
@@ -106,9 +106,9 @@ const page = () => {
                 alt='events'
                 />
             </div>
-            <p className='text-3xl m-auto text-white mb-2 ' >OsmoCross 
+            <p className='text-3xl m-auto text-white mb-2 ' >Football
             </p> 
-              <div className='flex flex-row-reverse mr-2'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
             {/* First Card ends */}
@@ -126,9 +126,9 @@ const page = () => {
                 alt='events'
                 />
             </div>
-            <p className='text-3xl m-auto text-white mb-2 ' >OsmoCross 
+            <p className='text-3xl m-auto text-white mb-2 ' >Chess 
             </p> 
-              <div className='flex flex-row-reverse mr-2'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
 
@@ -145,19 +145,117 @@ const page = () => {
                 alt='events'
                 />
             </div>
-            <p className='text-3xl m-auto text-white mb-2 ' >OsmoCross 
+            <p className='text-3xl m-auto text-white mb-2 ' >Valosmoze
             </p> 
-              <div className='flex flex-row-reverse mr-2'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
+
+          </div>
+
+
+
+          {/* Third Row */}
+
+          <div className="lg:flex lg:gap-12 mb-6">
+
+
+<div className="border border-gray-200/15 bg-gray-200/15  mt-9 w-11/12  flex flex-col lg:w-4/12">
+
+    <div className=' h-300px w-11/12 m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4 '>
+    <Image
+    className="inline-block "
+    src="/image.png"
+    width={300}
+    height={300}
+    alt='events'
+    />
+</div>
+<p className='text-3xl m-auto text-white mb-2 ' >Adhyayan
+</p> 
+  <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+</div>
+
+{/* First Card ends */}
+
+
+
+<div className="border border-gray-200/15 bg-gray-200/15  mt-9 w-11/12  flex flex-col lg:w-4/12">
+
+    <div className=' h-300px w-11/12 m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4 '>
+    <Image
+    className="inline-block "
+    src="/image.png"
+    width={300}
+    height={300}
+    alt='events'
+    />
+</div>
+<p className='text-3xl m-auto text-white mb-2 ' >Chemathon 
+</p> 
+  <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+</div>
+
+
+
+
+<div className="border border-gray-200/15 bg-gray-200/15  mt-9 w-11/12  flex flex-col lg:w-4/12">
+
+    <div className=' h-300px w-11/12 m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4 '>
+    <Image
+    className="inline-block "
+    src="/image.png"
+    width={300}
+    height={300}
+    alt='events'
+    />
+</div>
+<p className='text-3xl m-auto text-white mb-2 ' >Symposium
+</p> 
+  <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+</div>
+
+</div>
+
+
+
+{/* Last row */}
+
+<div className="lg:flex lg:gap-12 mb-6">
+
+
+
+
+{/* First Card ends */}
+
+
+
+<div className="border border-gray-200/15 bg-gray-200/15  mt-9 w-11/12  flex flex-col lg:w-full">
+
+    <div className=' h-300px w-11/12 m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4 '>
+    <Image
+    className="inline-block "
+    src="/image.png"
+    width={300}
+    height={300}
+    alt='events'
+    />
+</div>
+<p className='text-3xl m-auto text-white mb-2 ' >Udyog
+</p> 
+  <div className='m-auto'><a href='#' className='font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+</div>
+
+
+
+
+
+
+</div>
 
 
           
 
 
-
-
-
-          </div>
 
         </div>
       </div>
