@@ -16,10 +16,10 @@ export default function Home() {
       <div className="container mx-auto py-3">
       <div className="flex text-[#8DD5FF] font-serif tracking-wider md:text-xl text-sm">
         <section className="flex  w-1/2">
-          <div>
+          <div className="p-[20px]">
             
 
-            <Image src={osmoze} alt='' height='' width='' className=' h-52 w-52'/>
+            <Image src={osmoze} alt='' height='' width='' className='  h-[10rem] w-[10rem]'/>
             
           </div>
           <div className="flex flex-col text-base md:text-2xl justify-center align-middle gap-y-5 md:gap-y-8">
