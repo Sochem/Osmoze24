@@ -1,8 +1,7 @@
 "use client"
 import React from 'react';
-import Osmoze from '../image/osmoze.png';
+import Osmoze from '../image/osmoze2.png';
 import Link from 'next/link';
-import signIn from '../../../src/app/signIn/page.jsx'
 
 import Image from 'next/image';
 
@@ -24,7 +23,7 @@ const Navbar = () => {
     <div className=" order-first lg:order-first lg:w-1/5   lg:flex lg:justify-start m-0 p-0">
     <Link href="/">
         
-    <Image src={Osmoze} alt="" width="" height="" className='h-[70px] w-[110px] '/>
+    <Image src={Osmoze} alt="" width="" height="" className='h-[70px] w-[70px] '/>
     </Link>   
       
     </div>

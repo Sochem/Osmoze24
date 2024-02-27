@@ -2,7 +2,7 @@ import Image from 'next/image';
 import facebook from '../image/facebook2.png';
 import instagram from '../image/insta.png';
 import linkedin from '../image/linkedin2.png';
-import osmoze from '../image/osmoze.png';
+import osmoze from '../image/osmoze2.png';
 
 
 
@@ -19,7 +19,7 @@ export default function Home() {
           <div>
             
 
-            <Image src={osmoze} alt='' height='' width=''/>
+            <Image src={osmoze} alt='' height='' width='' className=' h-52 w-52'/>
             
           </div>
           <div className="flex flex-col text-base md:text-2xl justify-center align-middle gap-y-5 md:gap-y-8">
@@ -32,8 +32,8 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <section className=" w-1/2 pl-2 flex flex-col justify-center align-middle gap-y-5 md:gap-5 mr-10">
-          <div className="flex md:gap-x-[8rem] mt-3 md:mt-5 gap-x-2 md:justify-end">
+        <section className=" w-1/2 pl-2 flex flex-col justify-center align-middle md:gap-y-12 gap-y-5  md:gap-6 mr-10">
+          <div className="flex md:gap-x-[8rem] mt-3 md:mt-5 gap-x-3 md:justify-end">
             <p>
               Contact Us
             </p>

@@ -8,7 +8,7 @@ import { auth, provider } from "../../../firebase";
 import UserDataService from "../Services/services.js";
 import toast from "react-hot-toast";
 import Cookies from "js-cookie";
-import Osmoze from "../image/osmoze.png";
+import Osmose from "../image/osmoze2.png";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.jsx";
@@ -167,7 +167,7 @@ const SignIn = () => {
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md ">
           <div className="flex flex-col items-center justify-center">
             <Image
-              src={Osmoze}
+              src={Osmose}
               // className="w-40 h-40"
               alt="osmoze"
               width={160}
