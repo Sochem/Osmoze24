@@ -18,11 +18,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <AuthContextProvider>
-        <body className="flex flex-col m-0 min-h-screen">
+        <body className="flex flex-col min-h-screen">
+          {/* <Navbar /> */}
           <div className="background-container ">
             <BackgroundEffect />
             <div className="children-container ">{children}</div>
           </div>
+          {/* <Footer /> */}
           <Script src="script.js"></Script>
         </body>
 

@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex flex-col m-0 min-h-screen">
       <Navbar />
-      <div className="flex flex-col m-0 min-h-screen">Home</div>
+      home
       <Footer />
     </div>
   );

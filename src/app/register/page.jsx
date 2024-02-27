@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import Image from "next/image";
+import Osmoze from "../image/osmoze.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.jsx";
 const Page = () => {
@@ -73,12 +74,7 @@ const Page = () => {
       <main className="flex text-center px-20 mt-10 flex-col  items-center justify-center ">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
           <div className="flex flex-col items-center justify-center">
-            <Image
-              src="https://www.osmoze.in/images/Osmoze.svg"
-              alt="osmoze"
-              width={160}
-              height={160}
-            />
+            <Image src={Osmoze} alt="osmoze" width={160} height={160} />
             <h2 className="text-2xl font-bold mb--1 text-black">
               Osmoze&apos;<span className="text-sky-600">24</span>
             </h2>
