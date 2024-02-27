@@ -190,7 +190,7 @@ Lorem ipsum dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Asper
       
       <Footer/>
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;
