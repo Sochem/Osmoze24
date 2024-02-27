@@ -12,7 +12,7 @@ export default function Home() {
   
   return (
     <>
-    <footer className="h-[280px] w-full mt-auto   bg-[#07000B] text-white">
+    <footer className="h-[280px] w-full mt-auto   bg-[#07000B] bg-opacity-70 text-white">
       <div className="container mx-auto py-3">
       <div className="flex text-[#8DD5FF] font-serif tracking-wider md:text-xl text-sm">
         <section className="flex  w-1/2">

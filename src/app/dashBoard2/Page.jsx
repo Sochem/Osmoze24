@@ -14,7 +14,7 @@ const page = () => {
   return (
     <>
     
-    <section className="sticky text-[#8DD5FF]  bg-[#07000B] lg:h-[100vh] lg:flex lg:flex:col shadow-md tracking-wide shadow-black/5 w-1/5">
+    <section className="sticky text-[#8DD5FF]  bg-[#07000B] bg-opacity-70 lg:h-[100vh] lg:flex lg:flex:col shadow-md tracking-wide shadow-black/5 w-1/5">
   <div className="container mx-auto flex lg:gap-y-10 flex-wrap pb-5 flex-col lg:flex-col">
     <ul className="flex  lg:flex-col flex-wrap lg:gap-y-8  text-base  lg:text-[1.4rem] text-center">
      
