@@ -44,7 +44,7 @@ const page = () => {
             </div>
             <p className='text-3xl m-auto text-white mb-2 ' >OsmoCross 
             </p> 
-              <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto p-1 mb-2'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
             {/* First Card ends */}
@@ -64,7 +64,7 @@ const page = () => {
             </div>
             <p className='text-3xl m-auto text-white mb-2 ' >OsmoClick
             </p> 
-              <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto p-1 mb-2'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
 
@@ -83,7 +83,7 @@ const page = () => {
             </div>
             <p className='text-3xl m-auto text-white mb-2 ' >Cricket 
             </p> 
-              <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto mb-2 p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
 
@@ -108,7 +108,7 @@ const page = () => {
             </div>
             <p className='text-3xl  m-auto text-white mb-2 ' >Football
             </p> 
-              <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto mb-2 p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
             {/* First Card ends */}
@@ -128,7 +128,7 @@ const page = () => {
             </div>
             <p className='text-3xl m-auto text-white mb-2 ' >Chess 
             </p> 
-              <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto mb-2 p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
 
@@ -147,7 +147,7 @@ const page = () => {
             </div>
             <p className='text-3xl m-auto text-white mb-2 ' >Valosmoze
             </p> 
-              <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+              <div className='m-auto mb-2 p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
             </div>
 
           </div>
@@ -172,7 +172,7 @@ const page = () => {
 </div>
 <p className='text-3xl m-auto text-white mb-2 ' >Adhyayan
 </p> 
-  <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+  <div className='m-auto mb-2 p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
 </div>
 
 {/* First Card ends */}
@@ -192,7 +192,7 @@ const page = () => {
 </div>
 <p className='text-3xl m-auto text-white mb-2 ' >Chemathon 
 </p> 
-  <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+  <div className='m-auto mb-2 p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
 </div>
 
 
@@ -211,7 +211,7 @@ const page = () => {
 </div>
 <p className='text-3xl m-auto text-white mb-2 ' >Symposium
 </p> 
-  <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+  <div className='m-auto mb-2 p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
 </div>
 
 </div>
@@ -235,7 +235,7 @@ const page = () => {
 </div>
 <p className='text-3xl m-auto text-white mb-2 ' >Udyog
 </p> 
-  <div className='m-auto p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
+  <div className='m-auto mb-2 p-1'><a href='#' className='font-thin p-1 mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white'>Read more </a></div>
 </div>
 
 
