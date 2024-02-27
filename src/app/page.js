@@ -5,12 +5,10 @@ import "./styles/background.scss";
 
 export default function Home() {
   return (
-    <body className="flex flex-col m-0 min-h-screen">
-      <div className="flex flex-col m-0 min-h-screen">
-        <Navbar />
-        Home
-        <Footer />
-      </div>
-    </body>
+    <div className="flex flex-col m-0 min-h-screen">
+      <Navbar />
+      <div className="flex flex-col m-0 min-h-screen">Home</div>
+      <Footer />
+    </div>
   );
 }

@@ -68,7 +68,7 @@ const Page = () => {
     getUser();
   }, [setUsers]);
   return (
-    <div>
+    <div className="flex flex-col m-0 min-h-screen">
       <Navbar />
       <main className="flex text-center px-20 mt-10 flex-col  items-center justify-center ">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md">

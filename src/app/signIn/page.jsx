@@ -161,7 +161,7 @@ const SignIn = () => {
   }, [user]);
 
   return (
-    <>
+    <div>
       <Navbar />
       <main className="flex text-center px-20 mt-10 mb-10 flex-col  items-center justify-center ">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md ">
@@ -244,7 +244,7 @@ const SignIn = () => {
         </div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
