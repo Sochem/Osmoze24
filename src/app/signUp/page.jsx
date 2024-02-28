@@ -38,10 +38,52 @@ export default function Page() {
   const { googleSignIn } = UserAuth();
   const router = useRouter();
 
-  const SignUpWithGoogle = () => {
-    signInWithPopup(auth, provider)
-      .then((data) => {
-        console.log(data);
+  // const SignUpWithGoogle = () => {
+  //   signInWithPopup(auth, provider)
+  //     .then((data) => {
+  //       console.log(data);
+  //       setEmail(data.user.email);
+
+  //       toast.custom((t) => (
+  //         <div
+  //           className={`${
+  //             t.visible ? "animate-enter" : "animate-leave"
+  //           } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+  //         >
+  //           <div className="flex-1 w-0 p-4">
+  //             <div className="flex items-start">
+  //               <div className="ml-3 flex-1">
+  //                 <p className="mt-1 text-sm text-gray-500">
+  //                   Fill your details below
+  //                 </p>
+  //               </div>
+  //             </div>
+  //           </div>
+  //           <div className="flex border-l border-gray-200">
+  //             <button
+  //               onClick={() => {
+  //                 toast.dismiss(t.id);
+  //                 setTimeout(() => {
+  //                   router.push("/register");
+  //                 }, 500);
+  //               }}
+  //               className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none"
+  //             >
+  //               OK
+  //             </button>
+  //           </div>
+  //         </div>
+  //       ));
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+  const SignUpWithGoogle = async () => {
+    try {
+      const data = await signInWithPopup(auth, provider);
+      const userEmail = data.user.email;
+      if (userEmail.endsWith("@itbhu.ac.in")) {
         setEmail(data.user.email);
 
         toast.custom((t) => (
@@ -65,55 +107,57 @@ export default function Page() {
                   toast.dismiss(t.id);
                   setTimeout(() => {
                     router.push("/register");
-                  }, 1000);
+                  }, 500);
                 }}
-                className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none"
               >
                 OK
               </button>
             </div>
           </div>
         ));
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setMessage("");
-    if (userName === "" || email === "") {
-      setMessage({ error: true, msg: "All fields are mandatory!" });
-      return;
+      } else {
+        toast.error("Only itbhu.ac.in domain emails are allowed to log in.");
+      }
+    } catch (error) {
+      console.log(error);
     }
-
-    const newUser = {
-      userName,
-      branch,
-      password,
-      email,
-    };
-    console.log(newUser);
-
-    try {
-      const data = await UserDataService.addUser(newUser);
-      console.log("userId:", data.id);
-      const UserId = data.id;
-      Cookies.set("User", UserId);
-      setMessage({ error: false, msg: "New User added successfully!" });
-    } catch (err) {
-      setMessage({ error: true, msg: err.message });
-    }
-
-    setUserName("");
-    setBranch("");
-    setEmail("");
-    setPassword("");
-    toast.success("  You are successfully registered! ");
-    setTimeout(() => {
-      router.push("/");
-    }, 1000);
   };
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setMessage("");
+  //   if (userName === "" || email === "") {
+  //     setMessage({ error: true, msg: "All fields are mandatory!" });
+  //     return;
+  //   }
+
+  //   const newUser = {
+  //     userName,
+  //     branch,
+  //     password,
+  //     email,
+  //   };
+  //   console.log(newUser);
+
+  //   try {
+  //     const data = await UserDataService.addUser(newUser);
+  //     console.log("userId:", data.id);
+  //     const UserId = data.id;
+  //     Cookies.set("User", UserId);
+  //     setMessage({ error: false, msg: "New User added successfully!" });
+  //   } catch (err) {
+  //     setMessage({ error: true, msg: err.message });
+  //   }
+
+  //   setUserName("");
+  //   setBranch("");
+  //   setEmail("");
+  //   setPassword("");
+  //   toast.success("  You are successfully registered! ");
+  //   setTimeout(() => {
+  //     router.push("/");
+  //   }, 1000);
+  // };
 
   useEffect(() => {
     const getUser = async () => {
@@ -127,7 +171,7 @@ export default function Page() {
   return (
     <div className="m-0 min-h-screen">
       <Navbar />
-      <main className="flex text-center px-20 mt-10 mb-10 flex-col  items-center justify-center m-0 min-h-screen">
+      <main className="flex text-center px-20 mt-5 mb-10 flex-col  items-center justify-center m-0 min-h-screen">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
           <div className="flex flex-col items-center justify-center">
             <Image src={Osmoze} alt="osmoze" width={160} height={160} />
@@ -138,7 +182,7 @@ export default function Page() {
             <span className="text-black text-xs">SIGN UP WITH</span>
             <button
               onClick={SignUpWithGoogle}
-              className="text-black text-sm m-2 flex mb-5 border border-2 border-gray-300 rounded-md shadow-md hover:shadow-lg hover:text-blue-600  py-1 px-2"
+              className="text-black text-sm m-2 flex mb-5  border-2 border-gray-300 rounded-md shadow-md hover:shadow-lg hover:text-blue-600  py-1 px-2"
             >
               <Image
                 alt="..."
@@ -152,7 +196,7 @@ export default function Page() {
             <div className=" border border-1  w-full border-gray-400 shadow-[0_1px_2px_rgba(57,62,86,0.5)]"></div>
           </div>
 
-          <form className="mt-6">
+          {/* <form className="mt-6">
             <div className="mb-4 text-left">
               <label
                 htmlFor="username"
@@ -213,11 +257,11 @@ export default function Page() {
             >
               SIGN UP
             </button>
-          </form>
+          </form> */}
         </div>
         <div className="flex flex-wrap mt-6 ">
           <div className="text-left">
-            <small className="text-grey-100 text-sm">
+            <small className="text-grey-100 text-sm text-white">
               Already Registered?
               <span className="bg-cyan-500 text-gray-800 px-2 py-2 rounded ml-1 mr-1 mb-1 uppercase shadow-md hover:shadow-lg inline-flex items-center font-bold text-xs">
                 <Link href="/signIn">Login</Link>

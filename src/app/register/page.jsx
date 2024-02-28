@@ -10,14 +10,15 @@ import Cookies from "js-cookie";
 import Image from "next/image";
 import Osmoze from "../image/osmoze.png";
 import Navbar from "../components/Navbar";
+
 import Footer from "../components/Footer.jsx";
 const Page = () => {
   const {
     userName,
     setUserName,
     email,
-    password,
-    setPassword,
+    // password,
+    // setPassword,
     branch,
     setBranch,
     year,
@@ -27,13 +28,21 @@ const Page = () => {
     setUsers,
   } = UserAuth();
   const router = useRouter();
+
+  useEffect(() => {
+    const getUser = async () => {
+      const data = await UserDataService.getAllUser();
+      console.log(data.docs);
+      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getUser();
+  }, [setUsers]);
+
   const handleRegister = async (e) => {
     e.preventDefault();
-
     const newUser = {
       userName,
       branch,
-      password,
       email: email,
       year,
       phone,
@@ -54,20 +63,12 @@ const Page = () => {
     setBranch("");
     setYear("");
     setPhone("");
-    setPassword("");
-    toast.success("  You are successfully registered! ");
+    toast.success("You are successfully registered!");
     setTimeout(() => {
       router.push("/");
     }, 1000);
   };
-  useEffect(() => {
-    const getUser = async () => {
-      const data = await UserDataService.getAllUser();
-      console.log(data.docs);
-      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getUser();
-  }, [setUsers]);
+
   return (
     <div className="flex flex-col m-0 min-h-screen">
       <Navbar />
@@ -149,7 +150,7 @@ const Page = () => {
                 required
               />
             </div>
-            <div className="mb-4 text-left">
+            {/* <div className="mb-4 text-left">
               <label
                 htmlFor="password"
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -164,7 +165,7 @@ const Page = () => {
                 className="w-full p-2 border text-black border-gray-300 rounded"
                 required
               />
-            </div>
+            </div> */}
             <button
               type="submit"
               className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-700"
@@ -175,7 +176,7 @@ const Page = () => {
           </form>
         </div>
         <div className="flex">
-          <div mt-2 className="text-left">
+          <div mt-2 className="text-left text-white">
             Already Registered?
           </div>
           <button

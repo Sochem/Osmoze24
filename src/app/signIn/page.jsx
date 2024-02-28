@@ -98,51 +98,51 @@ const SignIn = () => {
     }
   };
 
-  const handleSignIn = async () => {
-    try {
-      const userEmail = users.some((doc) => doc.email === email);
-      const userPassword = users.some((doc) => doc.password === password);
-      const userId = users.find((doc) => doc.email === email)?.id || "";
+  // const handleSignIn = async () => {
+  //   try {
+  //     const userEmail = users.some((doc) => doc.email === email);
+  //     const userPassword = users.some((doc) => doc.password === password);
+  //     const userId = users.find((doc) => doc.email === email)?.id || "";
 
-      setCurrentUserId(userId);
+  //     setCurrentUserId(userId);
 
-      if (userEmail && userPassword) {
-        router.push("/");
-      } else {
-        toast.custom((t) => (
-          <div
-            className={`${
-              t.visible ? "animate-enter" : "animate-leave"
-            } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-          >
-            <div className="flex-1 w-0 p-4">
-              <div className="flex items-start">
-                <div className="ml-3 flex-1">
-                  <p className="mt-1 text-sm text-gray-500">
-                    Invalid Password or You haven&apos;t set a Password!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="flex border-l border-gray-200">
-              <button
-                onClick={() => {
-                  toast.dismiss(t.id);
-                }}
-                className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              >
-                Ok
-              </button>
-            </div>
-          </div>
-        ));
-      }
-    } catch (error) {
-      setError("Error creating account");
-    }
-    setEmail("");
-    setPassword("");
-  };
+  //     if (userEmail && userPassword) {
+  //       router.push("/");
+  //     } else {
+  //       toast.custom((t) => (
+  //         <div
+  //           className={`${
+  //             t.visible ? "animate-enter" : "animate-leave"
+  //           } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+  //         >
+  //           <div className="flex-1 w-0 p-4">
+  //             <div className="flex items-start">
+  //               <div className="ml-3 flex-1">
+  //                 <p className="mt-1 text-sm text-gray-500">
+  //                   Invalid Password or You haven&apos;t set a Password!
+  //                 </p>
+  //               </div>
+  //             </div>
+  //           </div>
+  //           <div className="flex border-l border-gray-200">
+  //             <button
+  //               onClick={() => {
+  //                 toast.dismiss(t.id);
+  //               }}
+  //               className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+  //             >
+  //               Ok
+  //             </button>
+  //           </div>
+  //         </div>
+  //       ));
+  //     }
+  //   } catch (error) {
+  //     setError("Error creating account");
+  //   }
+  //   setEmail("");
+  //   setPassword("");
+  // };
 
   //For Google Connect!
   const { user, googleSignIn, logOut } = UserAuth();
@@ -170,13 +170,7 @@ const SignIn = () => {
       <main className="flex text-center px-20 mt-5 mb-10 flex-col  items-center justify-center ">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md ">
           <div className="flex flex-col items-center justify-center">
-            <Image
-              src={Osmose}
-              // className="w-40 h-40"
-              alt="osmoze"
-              width={160}
-              height={160}
-            />
+            <Image src={Osmose} alt="osmoze" width={160} height={160} />
             <h2 className="text-2xl font-bold mb--1 text-black">
               Osmoze&apos;<span className="text-sky-600">24</span>
             </h2>
