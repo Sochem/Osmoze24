@@ -1,3 +1,6 @@
+
+
+
 import Image from "next/image";
 import facebook from "../image/facebook2.png";
 import instagram from "../image/insta.png";
@@ -7,7 +10,9 @@ import osmoze from "../image/osmoze2.png";
 export default function Home() {
   return (
     <>
-      <footer className="h-[280px] w-full mt-auto bg-[#07000B] bg-opacity-70 text-white">
+
+
+      <footer className="h-[320px] w-full mt-auto bg-[#07000B] bg-opacity-70 text-white">
         <div className="container mx-auto py-3">
           <div className="flex text-[#8DD5FF] font-serif tracking-wider md:text-xl text-sm">
             <section className="flex w-1/3 p-2">
@@ -39,6 +44,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
+
             </div>
             <section className="w-1/3 pl-2 flex flex-col justify-center align-middle md:gap-y-12 gap-y-5 md:gap-6 p-4">
               <div className="flex p-2 mx-auto md:gap-x-5 mt-3 md:mt-5 gap-x-3 md:justify-end">
