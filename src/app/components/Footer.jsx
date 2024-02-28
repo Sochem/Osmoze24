@@ -28,7 +28,7 @@ export default function Home() {
             </h1>
             <p className="">
               The Annual 
-              Chemical Extravaganzo
+              Chemical Extravaganza
             </p>
           </div>
         </section>
