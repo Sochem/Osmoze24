@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animated {
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .rotate-animation {
+    animation-name: rotate; 
+  }
 
 .hide-scroll-bar {
     -ms-overflow-style: none;
