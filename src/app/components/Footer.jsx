@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <footer className="h-[280px] w-full mt-auto bg-[#07000B] bg-opacity-70 text-white">
-        <div className="container mx-auto py-3">
+        <div className="container mx-auto">
           <div className="flex text-[#8DD5FF] font-serif tracking-wider md:text-xl text-sm">
             <section className="flex w-1/3 p-2">
               <div className="flex flex-col text-base md:text-2xl justify-center align-middle">
@@ -18,7 +18,7 @@ export default function Home() {
                 <p className="">The Annual Chemical Extravaganza</p>
               </div>
             </section>
-            <div className="mx-auto justify-center items-center">
+            <div className="mx-auto justify-center items-center ">
               <Image
                 src={osmoze}
                 alt=""
@@ -52,8 +52,8 @@ export default function Home() {
               </div>
             </section>
           </div>
-          <hr className="mt-5 md:mt-0 border-[1.5px] border-sky-400 shadow-md" />
-          <div className="mt-2 md:mt-4 text-center text-sm">
+          <div className="text-center text-sm">
+            <hr className="mt-5 md:mt-0 border-[1.5px] border-sky-400 shadow-md" />
             <p>&#169; 2023 All Rights Reserved</p>
           </div>
         </div>

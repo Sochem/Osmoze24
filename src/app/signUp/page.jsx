@@ -13,7 +13,7 @@ import Image from "next/image.js";
 import Osmoze from "../image/osmoze.png";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
-import Google from '../image/google.svg'
+import Google from "../image/google.svg";
 
 export default function Page() {
   const {
@@ -150,7 +150,6 @@ export default function Page() {
               Google
             </button>
             <div className=" border border-1  w-full border-gray-400 shadow-[0_1px_2px_rgba(57,62,86,0.5)]"></div>
-            <p className="text-gray-600 mt-3"> Or sign up with credentials</p>
           </div>
 
           <form className="mt-6">
@@ -204,23 +203,6 @@ export default function Page() {
                 name="email"
                 autoComplete="email"
                 className="w-full p-2 text-black border border-gray-300 rounded"
-                required
-              />
-            </div>
-
-            <div className="mb-4 text-left">
-              <label
-                htmlFor="password"
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
-                PASSWORD
-              </label>
-              <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-                id="password"
-                className="w-full p-2 border text-black border-gray-300 rounded"
                 required
               />
             </div>
