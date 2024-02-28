@@ -7,6 +7,8 @@ import toast from "react-hot-toast";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../firebase";
 import "../styles/modalWindow.css";
+import { RxCross1 } from "react-icons/rx";
+
 const EventCard = ({ isOpen, id }) => {
   const { events, setEvents, isModalOpen, setIsModalOpen } = UserAuth();
 
@@ -52,51 +54,62 @@ const EventCard = ({ isOpen, id }) => {
     // }
   };
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={closeModal}
-      contentLabel="Edit Modal"
-      className="bgg"
-    >
-      {events.map((doc, index) => {
-        if (doc.id == id) {
-          return (
-            <div key={doc.id} className="flex justify-center items-center">
-              <div className="bg-[url('../image/bg.png')] bg-cover text-white w-fit h-fit mx-auto mt-8 p-8 bg-gray-100 rounded-md">
-                <h2 className="mb-6">Theme: {doc.theme}</h2>
-                <span className="mt-50">{doc.description}</span>
-                <div className="grid grid-cols-6 gap-4 mt-6">
-                  <div className="col-start-1 col-end-3 ">
-                    {doc.coordinator_1}
-                  </div>
-                  <div className="col-end-7 col-span-2 ">
-                    {doc.coordinator_2}
-                  </div>
-                </div>
-                <div className="grid grid-cols-6 gap-4 mt-1">
-                  <div className="col-start-1 col-end-3 ">XXXXXXXXXX</div>
-                  <div className="col-end-7 col-span-2 "> XXXXXXXXXX</div>
-                </div>
-                <div className="grid grid-cols-6 gap-4 mt-1">
-                  <div className="col-start-1 col-end-3 mt-10 w-32">
-                    Prize Worth: XXX
-                  </div>
-                  <div className="col-end-7 col-span-2 ">
-                    {" "}
+    <>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={closeModal}
+        contentLabel="Edit Modal"
+        className="modal-background "
+      >
+        {events.map((doc, index) => {
+          if (doc.id == id) {
+            return (
+              <div key={doc.id} className="flex justify-center items-center ">
+                <div className=" window-bg bg-cover text-white w-5/12 h-5/6 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
+                  <div className="flex justify-end items-end mb-4 ">
                     <button
-                      onClick={(e) => handleRegister(e, id)}
-                      className=" bg-blue-500 text-white p-2 rounded-xl  hover:bg-blue-700 mt-10 w-32  sm:text-sm sm:w-10 md:w-28"
+                      onClick={closeModal}
+                      className=" hover:border-2 hover:rounded-md hover:border-white p-1"
                     >
-                      Register Now
+                      <RxCross1 />
                     </button>
+                  </div>
+
+                  <h2 className="mb-6">Theme: {doc.theme}</h2>
+                  <span className="mt-50">{doc.description}</span>
+                  <div className="grid grid-cols-6 gap-4 mt-6">
+                    <div className="col-start-1 col-end-3 ">
+                      {doc.coordinator_1}
+                    </div>
+                    <div className="col-end-7 col-span-2 ">
+                      {doc.coordinator_2}
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-6 gap-4 mt-1">
+                    <div className="col-start-1 col-end-3 ">XXXXXXXXXX</div>
+                    <div className="col-end-7 col-span-2 "> XXXXXXXXXX</div>
+                  </div>
+                  <div className="grid grid-cols-6 gap-4 mt-1">
+                    <div className="col-start-1 col-end-3 mt-10 w-32">
+                      Prize Worth: XXX
+                    </div>
+                    <div className="col-end-7 col-span-2 ">
+                      {" "}
+                      <button
+                        onClick={(e) => handleRegister(e, id)}
+                        className=" bg-blue-500 border-white  border-1 text-white p-2 rounded-xl  hover:bg-blue-700 mt-10 w-32  sm:text-sm sm:w-10 md:w-28"
+                      >
+                        Register Now
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        }
-      })}
-    </Modal>
+            );
+          }
+        })}
+      </Modal>
+    </>
   );
 };
 

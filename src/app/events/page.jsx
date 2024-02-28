@@ -50,10 +50,10 @@ const Page = () => {
             alt="events"
           />
 
-          <p className="text-white text-sm m-auto w-11/12 font-thin lg:text-center">
+          {/* <p className="text-white text-sm m-auto w-11/12 font-thin lg:text-center">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque,
             exercitationem.
-          </p>
+          </p> */}
 
           {/* Header Ends */}
           <div className="  grid grid-cols-3 gap-4 mb-4">

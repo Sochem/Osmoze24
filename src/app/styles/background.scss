@@ -19,7 +19,7 @@ body {
 }
 
 .background-container {
-  position:fixed;
+  position: fixed;
   flex-grow: 1;
   // min-height: 100vh;
   min-height: fit-content;
@@ -36,7 +36,7 @@ body {
 :root {
   --color-bg1: rgb(19, 6, 76);
   --color-bg2: #050618;
-  --color1: rgb(27, 31, 80);
+  --color1: 27, 31, 80;
   --color2: 29, 13, 102;
   --color3: 14, 6, 111;
   --color4: 19, 2, 100;
@@ -220,11 +220,8 @@ body {
   }
 }
 
-
-@media screen and (max-width:800px){
-  .overlay{
+@media screen and (max-width: 800px) {
+  .overlay {
     display: flex;
   }
-
-  
 }
