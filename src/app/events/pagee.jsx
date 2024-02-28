@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import EventDataService from "../Services/event.js";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Image from "next/image";
 const Page = () => {
   const {
     events,
@@ -36,28 +37,75 @@ const Page = () => {
   return (
     <div className="flex flex-col m-0 min-h-screen">
       <Navbar />
-      <div>
-        {events?.map((doc, index) => {
-          return (
-            <>
-              <h2>{doc.event_name}</h2>
-              <button
-                onClick={(e) => {
-                  handleId(doc.id);
 
-                  openModal(e);
-                }}
-                className="border border-white rounded-sm ml-2 p-2"
-              >
-                Read More
-              </button>
+      {/* Background Image */}
+      <div className="grid-place-items-center p-6 lg:p-0 sm:m-auto w-full">
+        <div className=" bg-cover min-h-screen grid place-items-center">
+          {/* Header */}
+          <Image
+            className="inline-block w-8/12 mt-8 lg:w-2/12"
+            src="/Events.png"
+            width={400}
+            height={115}
+            alt="events"
+          />
 
-              <EventCard isOpen={isModalOpen} id={eventId} />
-            </>
-          );
-        })}
+          <p className="text-white text-sm m-auto w-11/12 font-thin lg:text-center">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque,
+            exercitationem.
+          </p>
+
+          {/* Header Ends */}
+          <div className="  lg:grid lg:grid-cols-3 lg:gap-12">
+            {events?.map((doc, index) => {
+              return (
+                <>
+                  <div className="border border-gray-200/15 bg-gray-200/15  mt-9 w-11/12  flex flex-col lg:w-4/12">
+                    <div className=" h-300px w-11/12 m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4 ">
+                      <Image
+                        className="inline-block "
+                        src="/image.png"
+                        width={300}
+                        height={300}
+                        alt="events"
+                      />
+                    </div>
+                    <p className="text-3xl m-auto text-white mb-2 ">
+                      {doc.event_name}
+                    </p>
+                    <div className="m-auto">
+                      <button
+                        onClick={(e) => {
+                          handleId(doc.id);
+
+                          openModal(e);
+                        }}
+                        className="font-thin mb-2 w-3/12 text-center text-black border rounded-md border-white bg-white"
+                      >
+                        Read more
+                      </button>
+                    </div>
+                  </div>
+                  {/* <h2>{doc.event_name}</h2>
+                  <button
+                    onClick={(e) => {
+                      handleId(doc.id);
+
+                      openModal(e);
+                    }}
+                    className="border border-white rounded-sm ml-2 p-2"
+                  >
+                    Read More
+                  </button> */}
+
+                  <EventCard isOpen={isModalOpen} id={eventId} />
+                </>
+              );
+            })}
+          </div>
+          <Footer />
+        </div>
       </div>
-      <Footer />
     </div>
   );
 };
