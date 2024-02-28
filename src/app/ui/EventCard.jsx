@@ -63,11 +63,15 @@ const EventCard = ({ isOpen, id }) => {
           return (
             <div key={doc.id} className="flex justify-center items-center">
               <div className="bg-[url('../image/bg.png')] bg-cover text-white w-fit h-fit mx-auto mt-8 p-8 bg-gray-100 rounded-md">
-                <h2 className="mb-6">Theme: {doc.Theme}</h2>
+                <h2 className="mb-6">Theme: {doc.theme}</h2>
                 <span className="mt-50">{doc.description}</span>
                 <div className="grid grid-cols-6 gap-4 mt-6">
-                  <div className="col-start-1 col-end-3 ">Pratham Aggarwal</div>
-                  <div className="col-end-7 col-span-2 ">Arpna</div>
+                  <div className="col-start-1 col-end-3 ">
+                    {doc.coordinator_1}
+                  </div>
+                  <div className="col-end-7 col-span-2 ">
+                    {doc.coordinator_2}
+                  </div>
                 </div>
                 <div className="grid grid-cols-6 gap-4 mt-1">
                   <div className="col-start-1 col-end-3 ">XXXXXXXXXX</div>
