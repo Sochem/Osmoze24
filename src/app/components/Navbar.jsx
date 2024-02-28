@@ -43,7 +43,7 @@ const Navbar = () => {
 
           <div className="lg:w-1/5 order-last lg:flex lg:justify-end m-0 p-0">
             <button className="bg-[#8DD5FF] text-sm lg:text-base mt-2 rounded-md lg:h-[30px] h-[25px] lg:w-[70px] w-[50px] text-black hover:text-[1.05rem] hover:text-blue-700 transition duration-300 ease-in-out transform hover:scale-105">
-              <Link href="/signUp">Login</Link>
+              <Link href="/signIn">Login</Link>
             </button>
           </div>
         </div>
