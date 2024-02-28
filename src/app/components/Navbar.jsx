@@ -9,7 +9,7 @@ import Image from 'next/image';
 const Navbar = () => {
   return (
     <>
-    <header className="sticky text-[#8DD5FF]  bg-[#09051B] lg:h-[80px] w-full lg:flex lg:align-middle font-serif shadow-md tracking-wide shadow-black/5 ">
+    <header className="sticky text-[#8DD5FF]  bg-[#09051B] lg:h-[80px] w-full lg:flex lg:align-middle font-serif shadow-md tracking-wide shadow-black/5 fixed top-0 w-full z-10">
   <div className="container mx-auto flex flex-wrap lg:justify-between  pb-5 flex-col lg:flex-row gap-between  items-center lg:pt-1">
     
     <ul className="flex lg:w-3/5 lg:justify-start flex-wrap items-center gap-x-5 text-base md:ml-auto lg:gap-x-[4rem]  lg:text-xl">

@@ -8,7 +8,9 @@ const AuthContext = createContext();
 
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [events, setEvents] = useState([]);
   const [userId, setUserId] = useState("");
+  const [eventId, setEventId] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [branch, setBranch] = useState("");
@@ -57,6 +59,10 @@ const AuthContextProvider = ({ children }) => {
         setPhone,
         isModalOpen,
         setIsModalOpen,
+        events,
+        setEvents,
+        eventId,
+        setEventId,
       }}
     >
       {children}
@@ -68,4 +74,4 @@ const UserAuth = () => {
   return useContext(AuthContext);
 };
 
-export { AuthContextProvider , UserAuth };
+export { AuthContextProvider, UserAuth };
