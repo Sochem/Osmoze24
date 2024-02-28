@@ -18,7 +18,7 @@ export default function Home() {
                 <p className="">The Annual Chemical Extravaganza</p>
               </div>
             </section>
-            <div className="mx-auto justify-center items-center">
+            <div className="mx-auto justify-center items-center p-4">
               <Image
                 src={osmoze}
                 alt=""

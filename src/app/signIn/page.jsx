@@ -12,7 +12,7 @@ import Osmose from "../image/osmoze2.png";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.jsx";
-import Google from '../image/google.svg'
+import Google from "../image/google.svg";
 const SignIn = () => {
   // For Email and Password!
   const router = useRouter();
@@ -42,53 +42,56 @@ const SignIn = () => {
     try {
       const data = await signInWithPopup(auth, provider);
       const userEmail = data.user.email;
+      if (userEmail.endsWith("@itbhu.ac.in")) {
+        const userId = users.find((doc) => doc.email === userEmail)?.id || "";
+        console.log(data.user);
+        console.log(userId);
+        setCurrentUserId(userId);
+        Cookies.set("User", userId);
+        // Check if the user exists in your local list of users
+        const userExists =
+          users.find((doc) => doc.email === userEmail)?.email || "";
 
-      const userId = users.find((doc) => doc.email === userEmail)?.id || "";
-      console.log(data.user);
-      console.log(userId);
-      setCurrentUserId(userId);
-      Cookies.set("User", userId);
-      // Check if the user exists in your local list of users
-      const userExists =
-        users.find((doc) => doc.email === userEmail)?.email || "";
-
-      if (!userExists) {
-        // console.log("User not found. Redirecting to signUp page...")
-        toast.custom((t) => (
-          <div
-            className={`${
-              t.visible ? "animate-enter" : "animate-leave"
-            } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-          >
-            <div className="flex-1 w-0 p-4">
-              <div className="flex items-start">
-                <div className="ml-3 flex-1">
-                  <p className="mt-1 text-sm text-gray-500">
-                    User Not found! Make sure you are registered.
-                  </p>
+        if (!userExists) {
+          // console.log("User not found. Redirecting to signUp page...")
+          toast.custom((t) => (
+            <div
+              className={`${
+                t.visible ? "animate-enter" : "animate-leave"
+              } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+            >
+              <div className="flex-1 w-0 p-4">
+                <div className="flex items-start">
+                  <div className="ml-3 flex-1">
+                    <p className="mt-1 text-sm text-gray-500">
+                      User Not found! Make sure you are registered.
+                    </p>
+                  </div>
                 </div>
               </div>
+              <div className="flex border-l border-gray-200">
+                <button
+                  onClick={() => {
+                    toast.dismiss(t.id);
+                    setTimeout(() => {
+                      router.push("/signUp");
+                    }, 500);
+                  }}
+                  className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none "
+                >
+                  Close
+                </button>
+              </div>
             </div>
-            <div className="flex border-l border-gray-200">
-              <button
-                onClick={() => {
-                  toast.dismiss(t.id);
-                  setTimeout(() => {
-                    router.push("/signUp");
-                  }, 500);
-                }}
-                className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none "
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        ));
-        setTimeout(() => {
-          router.push("/signUp");
-        }, 5000);
+          ));
+          setTimeout(() => {
+            router.push("/signUp");
+          }, 5000);
+        } else {
+          router.push("/");
+        }
       } else {
-        router.push("/");
+        toast.error("Only itbhu.ac.in domain emails are allowed to log in.");
       }
     } catch (error) {
       console.log(error);
@@ -193,55 +196,7 @@ const SignIn = () => {
               Google
             </button>
             <div className=" border border-1  w-full border-gray-400 shadow-[0_1px_2px_rgba(57,62,86,0.5)]"></div>
-            <p className="text-gray-600 mt-3"> Or sign in with credentials</p>
           </div>
-
-          <form className="mt-6">
-            <div className="mb-4 text-left">
-              <label
-                htmlFor="email"
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
-                EMAIL
-              </label>
-              <input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                type="email"
-                id="email"
-                name="email"
-                autoComplete="email"
-                className="w-full p-2 border border-gray-300 rounded text-black"
-                required
-              />
-            </div>
-
-            <div className="mb-4 text-left text-black">
-              <label
-                htmlFor="password"
-                className="block text-gray-700 text-sm font-bold mb-2"
-              >
-                PASSWORD
-              </label>
-              <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                type="password"
-                id="password"
-                name="password"
-                className="w-full p-2 border border-gray-300 rounded text-black"
-                required
-              />
-            </div>
-
-            <button
-              onClick={handleSignIn}
-              type="button"
-              className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
-            >
-              SIGN IN
-            </button>
-          </form>
         </div>
       </main>
 

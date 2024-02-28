@@ -13,7 +13,7 @@ import Image from "next/image.js";
 import Osmoze from "../image/osmoze.png";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
-import Google from '../image/google.svg'
+import Google from "../image/google.svg";
 
 export default function Page() {
   const {
