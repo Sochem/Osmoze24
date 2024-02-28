@@ -171,7 +171,7 @@ const homepage = () => {
                 <p class="leading-relaxed">
                   Edison bulb retro cloud bread echo park, helvetica stumptown
                   taiyaki taxidermy cronut +1 kinfolk. Single-origin coffee
-                  ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut
+                  ennui shaman taiyaki  DIY tote bag drinking vinegar cronut
                   adaptogen squid fanny pack vaporware.
                 </p>
                 <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
