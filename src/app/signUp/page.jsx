@@ -13,6 +13,8 @@ import Image from "next/image.js";
 import Osmoze from "../image/osmoze.png";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
+import Google from '../image/google.svg'
+
 export default function Page() {
   const {
     userName,
@@ -143,7 +145,7 @@ export default function Page() {
                 className=" mr-1"
                 width={20}
                 height={20}
-                src="https://dashboard.technex.co.in/assets/img/google.svg"
+                src={Google}
               />
               Google
             </button>
