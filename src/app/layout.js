@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <AuthContextProvider>
         <body className="flex flex-col min-h-screen">
+          <div className="overlay text-xl sm:text-3xl">Please open this website on PC or Laptop.</div>
           <div className="background-container ">
             <BackgroundEffect />
           </div>
