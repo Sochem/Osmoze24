@@ -38,6 +38,9 @@ export default function RootLayout({ children }) {
               success: {
                 duration: 2000,
               },
+              error: {
+                duration: 2000,
+              },
               style: {
                 fontSize: "16px",
                 maxWidth: "500px",

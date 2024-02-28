@@ -84,38 +84,78 @@ export default function Page() {
       const data = await signInWithPopup(auth, provider);
       const userEmail = data.user.email;
       if (userEmail.endsWith("@itbhu.ac.in")) {
-        setEmail(data.user.email);
+        if (users.find((doc) => doc.email == data.user.email) == undefined) {
+          setEmail(data.user.email);
 
-        toast.custom((t) => (
-          <div
-            className={`${
-              t.visible ? "animate-enter" : "animate-leave"
-            } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
-          >
-            <div className="flex-1 w-0 p-4">
-              <div className="flex items-start">
-                <div className="ml-3 flex-1">
-                  <p className="mt-1 text-sm text-gray-500">
-                    Fill your details below
-                  </p>
+          toast.custom((t) => (
+            <div
+              className={`${
+                t.visible ? "animate-enter" : "animate-leave"
+              } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+            >
+              <div className="flex-1 w-0 p-4">
+                <div className="flex items-start">
+                  <div className="ml-3 flex-1">
+                    <p className="mt-1 text-sm text-gray-500">
+                      Fill your details below
+                    </p>
+                  </div>
                 </div>
               </div>
+              <div className="flex border-l border-gray-200">
+                <button
+                  onClick={() => {
+                    toast.dismiss(t.id);
+                    setTimeout(() => {
+                      router.push("/register");
+                    }, 500);
+                  }}
+                  className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none"
+                >
+                  OK
+                </button>
+              </div>
             </div>
-            <div className="flex border-l border-gray-200">
-              <button
-                onClick={() => {
-                  toast.dismiss(t.id);
-                  setTimeout(() => {
-                    router.push("/register");
-                  }, 500);
-                }}
-                className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none"
-              >
-                OK
-              </button>
+          ));
+          setTimeout(() => {
+            router.push("/register");
+          }, 6000);
+        } else {
+          toast.custom((t) => (
+            <div
+              className={`${
+                t.visible ? "animate-enter" : "animate-leave"
+              } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+            >
+              <div className="flex-1 w-0 p-4">
+                <div className="flex items-start">
+                  <div className="ml-3 flex-1">
+                    <p className="mt-1 text-sm text-gray-500">
+                      You already have an account ! Please Sign in with your
+                      Institute mail Id.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex border-l border-gray-200">
+                <button
+                  onClick={() => {
+                    toast.dismiss(t.id);
+                    setTimeout(() => {
+                      router.push("/signIn");
+                    }, 500);
+                  }}
+                  className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none"
+                >
+                  OK
+                </button>
+              </div>
             </div>
-          </div>
-        ));
+          ));
+          setTimeout(() => {
+            router.push("/signIn");
+          }, 6000);
+        }
       } else {
         toast.error("Only itbhu.ac.in domain emails are allowed to log in.");
       }
@@ -171,12 +211,12 @@ export default function Page() {
   return (
     <div className="m-0 min-h-screen">
       <Navbar />
-      <main className="flex text-center px-20 mt-5 mb-10 flex-col  items-center justify-center m-0 min-h-screen">
+      <main className="flex text-center px-20 mt-5 mb-10 flex-col  items-center justify-center ">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
           <div className="flex flex-col items-center justify-center">
             <Image src={Osmoze} alt="osmoze" width={160} height={160} />
             <h2 className="text-2xl font-bold mb--1 text-black">
-              Osmoze<span className="text-sky-600">24</span>
+              Osmoze&apos;<span className="text-sky-600">24</span>
             </h2>
 
             <span className="text-black text-xs">SIGN UP WITH</span>
