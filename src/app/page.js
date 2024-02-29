@@ -10,6 +10,7 @@ export default function Home() {
     <div className="flex flex-col m-0 min-h-screen">
       <Navbar />
       <Homepage/>
+    
       <Footer />
     </div>
   );
