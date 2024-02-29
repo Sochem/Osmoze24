@@ -64,6 +64,7 @@ const Page = () => {
     setYear("");
     setPhone("");
     toast.success("You are successfully registered!");
+
     setTimeout(() => {
       router.push("/");
     }, 1000);

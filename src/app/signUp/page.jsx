@@ -154,7 +154,7 @@ export default function Page() {
           ));
           setTimeout(() => {
             router.push("/signIn");
-          }, 6000);
+          }, 5000);
         }
       } else {
         toast.error("Only itbhu.ac.in domain emails are allowed to log in.");
