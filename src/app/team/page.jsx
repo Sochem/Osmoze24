@@ -10,12 +10,12 @@ const team = () => {
     <>
       <Navbar />
       <div class="flex justify-center items-center  m-8 text-57 h-47px w-447px">
-        <p class=" text-[#13237A] rounded-[1px] border-black font-medium	text-center text-[50px] h-[50px] w-[447px] border-1 border-black font-modern">
+        <p class=" text-white rounded-[1px] border-black font-medium	text-center text-[50px] h-[50px] w-[447px] border-1 border-black font-modern">
           MEET OUR TEAMS
         </p>
       </div>
       
-      <div className="justify-center flex gap-x-[50px] gap-y-[500px] w-[85%] rounded-[33px] bg-[#07164A] pt-10 p-6 m-auto z-0 ">
+      <div className="justify-center flex gap-x-[50px] gap-y-[500px] w-[85%] rounded-[33px] bg-gray-200/15 pt-10 p-6 m-auto z-0 ">
         <div class=" p-6 rounded-lg">
           <Image
             width={200}
@@ -52,7 +52,7 @@ const team = () => {
       <div className=" h-[50px] w-auto"></div>
 
       <section class="text-gray-600 body-font">
-        <div class="flex justify-center items-center -m-4 w-[85%] p-5 m-auto rounded-[33px] bg-[#07164A]  ">
+        <div class="flex justify-center items-center -m-4 w-[85%] p-5 m-auto rounded-[33px] bg-gray-200/15  ">
           <div class="xl:w-1/5 md:w-1/5 p-2 ">
             <div class=" p-2 rounded-lg">
               <Image
@@ -111,7 +111,7 @@ const team = () => {
 
 <div className=" h-[50px] w-auto"></div>
 
-      <section class="body-font w-[85%] p-4 m-auto rounded-[33px] bg-[#07164A] ">
+      <section class="body-font w-[85%] p-4 m-auto rounded-[33px] bg-gray-200/15 ">
         <div class="flex justify-center items-center  m-8 text-57 h-475px w-447px z-50">
           <p class="text-center text-3xl h-[50px] w-[447px] border-1 border-black text-[45px] font-medium text-white	leading-10  font-modern z-10">
             Tech Heads
@@ -165,7 +165,7 @@ const team = () => {
       </section>
 <div className=" h-[50px] w-auto"></div>
 
-      <section className="w-[85%] p-4 m-auto rounded-[33px] bg-[#07164A] ">
+      <section className="w-[85%] p-4 m-auto rounded-[33px] bg-gray-200/15 ">
         <div class="flex justify-center items-center  m-8 text-57 h-47px w-447px">
           <p class="text-center text-3xl h-[50px] w-[447px] border-1 border-black  font-modern text-[45px] font-medium text-white	leading-10  font-modern">
             Design Heads
@@ -201,7 +201,7 @@ const team = () => {
       </section>
 <div className=" h-[50px] w-auto"></div>
 
-      <section className="w-[85%] p-4 m-auto rounded-[33px] bg-[#07164A] ">
+      <section className="w-[85%] p-4 m-auto rounded-[33px] bg-gray-200/15 ">
         <div class="flex justify-center items-center  m-8 text-57 h-47px w-447px">
           <p class="text-center text-3xl h-[50px] w-[447px] border-1 border-black  font-modern text-[45px] font-medium text-white	leading-10  font-modern">
             PR Heads
@@ -237,7 +237,7 @@ const team = () => {
       </section>
 <div className=" h-[50px] w-auto"></div>
 
-      <section className="w-[85%] p-4 m-auto rounded-[33px] bg-[#07164A] ">
+      <section className="w-[85%] p-4 m-auto rounded-[33px] bg-gray-200/15 ">
         <div class="flex justify-center items-center  m-8 text-57 h-47px w-447px">
           <p class="text-center text-3xl h-[50px] w-[447px] border-1 border-black  font-modern text-[45px] font-medium text-white	leading-10  font-modern">
             Branding Heads
@@ -273,7 +273,7 @@ const team = () => {
       </section>
 <div className=" h-[50px] w-auto"></div>
 
-      <section className="w-[85%] p-4 m-auto rounded-[33px] bg-[#07164A] ">
+      <section className="w-[85%] p-4 m-auto rounded-[33px] bg-gray-200/15 ">
         <div class="flex justify-center items-center  m-8 text-57 h-47px w-447px">
           <p class="text-center text-3xl h-[50px] w-[447px] border-1 border-black  font-modern text-[45px] font-medium text-white	leading-10  font-modern">
             Marketing Heads
@@ -308,7 +308,7 @@ const team = () => {
         </div>
       </section>
 <div className=" h-[50px] w-auto"></div>
-      <section class="text-gray-600 body-font  mb-8 w-[85%] p-4 m-auto rounded-[33px] bg-[#07164A] ">
+      <section class="text-gray-600 body-font  mb-8 w-[85%] p-4 m-auto rounded-[33px] bg-gray-200/15 ">
         <div class="flex justify-center items-center  m-8 text-57 h-475px w-447px">
           <p class="text-center text-3xl h-[50px] w-[447px] border-1 border-black  font-modern text-[45px] font-medium text-white	leading-10  font-modern">
             Operations Heads
