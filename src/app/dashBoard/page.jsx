@@ -80,22 +80,22 @@ const Dashboard = () => {
                   if (doc.id == Cookies.get("User")) {
                     return (
                       <div key={index + 1} className="grid grid-cols-2 gap-4 ">
-                        <div className="p-2 ml-10 mr-10 text-xl bg-[#07000B] text-[#BDE8F6] text-center rounded-md  bg-opacity-70">
+                        <div className="p-2 ml-10 mr-0.5 text-xl bg-[#07000B] text-[#BDE8F6] text-center rounded-md  bg-opacity-70">
                           Full Name
                         </div>
-                        <div className="p-2 ml-10 mr-10 text-xl bg-[#13237A] bg-opacity-70 text-[#BDE8F6] text-center rounded-md  ">
+                        <div className="p-2  mr-4 text-xl bg-[#13237A] bg-opacity-70 text-[#BDE8F6] text-center rounded-md  ">
                           {doc.userName}
                         </div>
-                        <div className="p-2 ml-10 mr-10 text-xl bg-[#07000B] text-[#BDE8F6]  text-center rounded-md  bg-opacity-70">
+                        <div className="p-2 ml-10 mr-0.5 text-xl bg-[#07000B] text-[#BDE8F6]  text-center rounded-md  bg-opacity-70">
                           Email
                         </div>
-                        <div className="p-2 ml-10 mr-10 text-xl bg-[#13237A] text-[#BDE8F6] text-center rounded-md  bg-opacity-70">
+                        <div className="p-2  mr-4 text-xl bg-[#13237A] text-[#BDE8F6] text-center rounded-md  bg-opacity-70">
                           {doc.email}
                         </div>
-                        <div className="p-2 ml-10 mr-10 text-xl bg-[#07000B] text-[#BDE8F6]  text-center rounded-md  bg-opacity-70">
+                        <div className="p-2 ml-10 mr-0.5 text-xl bg-[#07000B] text-[#BDE8F6]  text-center rounded-md  bg-opacity-70">
                           Contact Number
                         </div>
-                        <div className="p-2 ml-10 mr-10 text-xl bg-[#13237A] text-[#BDE8F6] text-center rounded-md  bg-opacity-70">
+                        <div className="p-2  mr-4 text-xl bg-[#13237A] text-[#BDE8F6] text-center rounded-md  bg-opacity-70">
                           {doc.phone}
                         </div>
                       </div>
