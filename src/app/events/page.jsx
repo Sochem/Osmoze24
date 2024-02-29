@@ -23,7 +23,8 @@ const Page = () => {
     };
     getEvent();
   }, []);
-  const openModal = () => {
+  const openModal = (e) => {
+    e.preventDefault();
     setIsModalOpen(true);
   };
 
@@ -60,7 +61,10 @@ const Page = () => {
             {events?.map((doc, index) => {
               return (
                 <>
-                  <div className="border border-gray-200/15 rounded-2xl bg-gray-200/15  mt-9 w-11/12  flex flex-col lg:w-11/12">
+                  <div
+                    className="border border-gray-200/15 rounded-2xl bg-gray-200/15  mt-9 w-11/12  flex flex-col lg:w-11/12"
+                    key={doc.id}
+                  >
                     <div className=" h-300px w-11/12 m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4 ">
                       <Image
                         className=" border rounded-2xl inline-block "
@@ -86,19 +90,8 @@ const Page = () => {
                       </button>
                     </div>
                   </div>
-                  {/* <h2>{doc.event_name}</h2>
-                  <button
-                    onClick={(e) => {
-                      handleId(doc.id);
 
-                      openModal(e);
-                    }}
-                    className="border border-white rounded-sm ml-2 p-2"
-                  >
-                    Read More
-                  </button> */}
-
-                  <EventCard isOpen={isModalOpen} id={eventId} />
+                  {/* <EventCard isOpen={isModalOpen} id={eventId} /> */}
                 </>
               );
             })}
@@ -106,6 +99,7 @@ const Page = () => {
           <Footer />
         </div>
       </div>
+      {isModalOpen && <EventCard isOpen={isModalOpen} id={eventId} />}
     </div>
   );
 };

@@ -24,7 +24,6 @@ export default function Home() {
                 alt=""
                 height={200}
                 width={200}
-                className="rounded-full"
               />
               <div className="flex flex-col mb-3 md:flex-row md:gap-x-5 md:justify-center mx-auto mt-2">
                 <div className="flex gap-x-3 md:gap-x-5 justify-center">

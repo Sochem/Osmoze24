@@ -54,18 +54,22 @@ const EventCard = ({ isOpen, id }) => {
     // }
   };
   return (
-    <>
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={closeModal}
-        contentLabel="Edit Modal"
-        className="modal-background "
-      >
+    <div className="blur-background">
+      <div className="modal-overlay">
+        {/* <Modal
+          isOpen={isOpen}
+          onRequestClose={closeModal}
+          contentLabel="Edit Modal"
+          className="modal-background "
+        > */}
         {events.map((doc, index) => {
           if (doc.id == id) {
             return (
-              <div key={doc.id} className="flex justify-center items-center ">
-                <div className=" window-bg bg-cover text-white w-5/12 h-5/6 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
+              <div
+                key={doc.id}
+                className="flex justify-center items-center w-5/12 h-5/6 "
+              >
+                <div className=" window-bg bg-cover text-white  mx-auto mt-8 p-8 bg-gray-100 rounded-md">
                   <div className="flex justify-end items-end mb-4 ">
                     <button
                       onClick={closeModal}
@@ -108,8 +112,9 @@ const EventCard = ({ isOpen, id }) => {
             );
           }
         })}
-      </Modal>
-    </>
+        {/* </Modal> */}
+      </div>
+    </div>
   );
 };
 
