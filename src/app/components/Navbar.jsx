@@ -22,7 +22,9 @@ const Navbar = () => {
               <Link href="/events">Events</Link>
             </li>
             <li className=" hover:text-[1.26rem]">
-              <Link href="/announcement">Announcement</Link>
+            <a href="https://www.instagram.com/sochem_iitbhu/">
+                    Announcement
+                  </a>
             </li>
             <li className=" hover:text-[1.26rem]">
               <Link href="/dashBoard">Dashboard</Link>
