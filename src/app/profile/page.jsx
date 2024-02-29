@@ -1,8 +1,5 @@
-
-
-
 "use client";
-import Page2 from '../dashBoard2/Page.jsx'
+import Page2 from "../dashBoard2/Page.jsx";
 import React from "react";
 import { useEffect, useState } from "react";
 import UserDataService from "../Services/services.js";
@@ -27,7 +24,6 @@ const Page = () => {
     setIsModalOpen,
   } = UserAuth();
 
-
   useEffect(() => {
     const getUser = async () => {
       const data = await UserDataService.getAllUser();
@@ -51,50 +47,45 @@ const Page = () => {
 
   return (
     <>
-
-    <div className=' font-serif flex m-0'>
-    <Page2/>
-    <table striped bordered hover size="sm">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>UserName</th>
-            <th>Branch</th>
-            <th>Email id</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((doc, index) => {
-            if (doc.id == Cookies.get("User")) {
-              return (
-                <tr key={index + 1}>
-                  <td>{doc.userName}</td>
-                  <td>{doc.branch}</td>
-                  <td>{doc.email}</td>
-                  <td>
-                    <button
-                      onClick={(e) => {
-                        openModal(e);
-                        getUserId(doc.id);
-                      }}
-                      className="border border-white rounded-sm ml-2 p-2"
-                    >
-                      Edit Data
-                    </button>
-                    <EditModal isOpen={isModalOpen} />
-                  </td>
-                </tr>
-              );
-            }
-          })}
-        </tbody>
-      </table>
-
-</div>
-  
-
-      
+      <div className=" font-serif flex m-0">
+        <Page2 />
+        <table striped bordered hover size="sm">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>UserName</th>
+              <th>Branch</th>
+              <th>Email id</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((doc, index) => {
+              if (doc.id == Cookies.get("User")) {
+                return (
+                  <tr key={index + 1}>
+                    <td>{doc.userName}</td>
+                    <td>{doc.branch}</td>
+                    <td>{doc.email}</td>
+                    <td>
+                      <button
+                        onClick={(e) => {
+                          openModal(e);
+                          getUserId(doc.id);
+                        }}
+                        className="border border-white rounded-sm ml-2 p-2"
+                      >
+                        Edit Data
+                      </button>
+                      <EditModal isOpen={isModalOpen} />
+                    </td>
+                  </tr>
+                );
+              }
+            })}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };
