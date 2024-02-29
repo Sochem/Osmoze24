@@ -90,8 +90,13 @@ const EventCard = ({ isOpen, id }) => {
                     </div>
                   </div>
                   <div className="grid grid-cols-6 gap-4 mt-1">
-                    <div className="col-start-1 col-end-3 ">XXXXXXXXXX</div>
-                    <div className="col-end-7 col-span-2 "> XXXXXXXXXX</div>
+                    <div className="col-start-1 col-end-3 ">
+                      {doc.coordinator_1_contact}
+                    </div>
+                    <div className="col-end-7 col-span-2 ">
+                      {" "}
+                      {doc.coordinator_2_contact}
+                    </div>
                   </div>
                   <div className="grid grid-cols-6 gap-4 mt-1">
                     <div className="col-start-1 col-end-3 mt-10 w-32">

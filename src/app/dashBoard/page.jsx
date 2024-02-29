@@ -60,31 +60,48 @@ const Dashboard = () => {
 
         <section className="w-4/5 h-[100vh] bg-[#86B6F6] flex flex-col my-auto justify-center">
           <div className="p-6 ">
-            <div className="flex justify-between lg:flex-col">
-              <div className=" mx-auto">
-                <h1 className="ml-5 text-5xl">Profile</h1>
+            <div className="flex justify-between lg:flex-col items-center">
+              <div className=" ml-2">
+                <h1 className=" text-5xl ">Profile</h1>
               </div>
-              <div className="mx-auto mt-5">
+
+              <div className="border rounded-full h-32 w-32 mt-4">
                 <Image
                   src={url}
                   alt="Image"
-                  width={500}
-                  height={500}
+                  width={128}
+                  height={128}
+                  className="rounded-full"
                   // className=" h-32 w-32 "
                 />
-                <div>
-                  {users.map((doc, index) => {
-                    if (doc.id == Cookies.get("User")) {
-                      return (
-                        <div key={index + 1}>
-                          <div>{doc.userName}</div>
-                          <div>{doc.email}</div>
-                          <div>{doc.phone}</div>
+              </div>
+              <div className="ml-14 mt-8">
+                {users.map((doc, index) => {
+                  if (doc.id == Cookies.get("User")) {
+                    return (
+                      <div key={index + 1} className="grid grid-cols-2 gap-4 ">
+                        <div className="p-2 ml-10 mr-10 text-xl bg-[#07000B] text-[#BDE8F6] text-center rounded-md  bg-opacity-70">
+                          Full Name
                         </div>
-                      );
-                    }
-                  })}
-                </div>
+                        <div className="p-2 ml-10 mr-10 text-xl bg-[#13237A] bg-opacity-70 text-[#BDE8F6] text-center rounded-md  ">
+                          {doc.userName}
+                        </div>
+                        <div className="p-2 ml-10 mr-10 text-xl bg-[#07000B] text-[#BDE8F6]  text-center rounded-md  bg-opacity-70">
+                          Email
+                        </div>
+                        <div className="p-2 ml-10 mr-10 text-xl bg-[#13237A] text-[#BDE8F6] text-center rounded-md  bg-opacity-70">
+                          {doc.email}
+                        </div>
+                        <div className="p-2 ml-10 mr-10 text-xl bg-[#07000B] text-[#BDE8F6]  text-center rounded-md  bg-opacity-70">
+                          Contact Number
+                        </div>
+                        <div className="p-2 ml-10 mr-10 text-xl bg-[#13237A] text-[#BDE8F6] text-center rounded-md  bg-opacity-70">
+                          {doc.phone}
+                        </div>
+                      </div>
+                    );
+                  }
+                })}
               </div>
             </div>
             <div className="p-2 ml-10 mr-10 text-xl bg-[#07000B] text-[#BDE8F6] mt-10 mx-auto text-center">
@@ -93,25 +110,25 @@ const Dashboard = () => {
 
             {/* horizontal scrolling */}
 
-            <div class=" flex overflow-x-scroll pb-0 hide-scroll-bar mt-14 mb-5  w-4/5 m-auto">
-              <div class="flex flex-nowrap lg:ml-16 md:ml-20 ml-10 ">
-                <div class="inline-block px-3">
-                  <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+            <div className=" flex overflow-x-scroll pb-0 hide-scroll-bar mt-14 mb-5  w-4/5 m-auto">
+              <div className="flex flex-nowrap lg:ml-16 md:ml-20 ml-10 ">
+                <div className="inline-block px-3">
+                  <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
                 </div>
-                <div class="inline-block px-3">
-                  <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                <div className="inline-block px-3">
+                  <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
                 </div>
-                <div class="inline-block px-3">
-                  <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                <div className="inline-block px-3">
+                  <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
                 </div>
-                <div class="inline-block px-3">
-                  <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                <div className="inline-block px-3">
+                  <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
                 </div>
