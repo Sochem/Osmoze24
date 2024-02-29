@@ -2,9 +2,8 @@
 
 import React from "react";
 import Page from "../dashBoard2/Page.jsx";
-import Cookies from "js-cookie";
+
 import Link from "next/link";
-import UserDataService from "../Services/services.js";
 import Image from "next/image";
 import Image1 from "../image/image1.png";
 import "../styles/globals.css";
@@ -52,7 +51,6 @@ const Dashboard = () => {
     console.log("The ID of document to be edited: ", id);
     setUserId(id);
   };
-  const url = Cookies.get("Photo");
   return (
     <>
       <div className=" font-serif flex m-0">
@@ -66,30 +64,26 @@ const Dashboard = () => {
               </div>
               <div className="mx-auto mt-5">
                 <Image
-                  src={url}
-                  alt="Image"
-                  width={500}
-                  height={500}
-                  // className=" h-32 w-32 "
+                  src={Image1}
+                  alt=""
+                  height=""
+                  width=""
+                  className=" h-32 w-32 "
                 />
-                <div>
-                  {users.map((doc, index) => {
-                    if (doc.id == Cookies.get("User")) {
-                      return (
-                        <div key={index + 1}>
-                          <div>{doc.userName}</div>
-                          <div>{doc.email}</div>
-                          <div>{doc.phone}</div>
-                        </div>
-                      );
-                    }
-                  })}
-                </div>
+                <p className="text-center text-lg">Name</p>
               </div>
             </div>
             <div className="p-2 ml-10 mr-10 text-xl bg-[#07000B] text-[#BDE8F6] mt-10 mx-auto text-center">
               <h2>Registered events</h2>
             </div>
+
+            {/* <div className=" mt-10 mb-10 ml-12  gap-x-20 flex overflow-x-scroll pb-10 hide-scroll-bar">
+              <Event />
+              <Event />
+              <Event />
+              <Event />
+              <Event />
+            </div> */}
 
             {/* horizontal scrolling */}
 

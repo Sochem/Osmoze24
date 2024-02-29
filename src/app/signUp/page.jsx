@@ -82,11 +82,11 @@ export default function Page() {
   const SignUpWithGoogle = async () => {
     try {
       const data = await signInWithPopup(auth, provider);
+      console.log(data);
       const userEmail = data.user.email;
       if (userEmail.endsWith("@itbhu.ac.in")) {
         if (users.find((doc) => doc.email == data.user.email) == undefined) {
           setEmail(data.user.email);
-
           toast.custom((t) => (
             <div
               className={`${

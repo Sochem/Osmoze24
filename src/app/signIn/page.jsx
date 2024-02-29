@@ -41,13 +41,16 @@ const SignIn = () => {
   const SignInWithGoogle = async () => {
     try {
       const data = await signInWithPopup(auth, provider);
+      console.log(data);
       const userEmail = data.user.email;
       if (userEmail.endsWith("@itbhu.ac.in")) {
         const userId = users.find((doc) => doc.email === userEmail)?.id || "";
-        console.log(data.user);
+
         console.log(userId);
         setCurrentUserId(userId);
         Cookies.set("User", userId);
+        Cookies.set("Photo", data.user.photoURL);
+        console.log(data.user.photoURL);
         // Check if the user exists in your local list of users
         const userExists =
           users.find((doc) => doc.email === userEmail)?.email || "";
