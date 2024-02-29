@@ -174,14 +174,14 @@ const SignIn = () => {
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md ">
           <div className="flex flex-col items-center justify-center">
             <Image src={Osmose} alt="osmoze" width={160} height={160} />
-            <h2 className="text-2xl font-bold mb--1 text-black">
+            <h2 className="text-2xl font-bold mb-1 text-black">
               Osmoze&apos;<span className="text-sky-600">24</span>
             </h2>
 
-            <span className="text-black text-xs">SIGN IN WITH</span>
+            <span className="text-black text-xs mb-1">SIGN IN WITH</span>
             <button
               onClick={SignInWithGoogle}
-              className="text-black text-sm m-2 flex mb-5  border-2 border-gray-300 rounded-md shadow-md hover:shadow-lg hover:text-blue-600  py-1 px-2"
+              className="text-black text-sm m-2 flex mb-3 border-2 border-gray-300 rounded-md shadow-md hover:shadow-lg hover:text-blue-600  py-1 px-2"
             >
               <Image
                 alt="..."
@@ -192,7 +192,6 @@ const SignIn = () => {
               />
               Google
             </button>
-            <div className=" border border-1  w-full border-gray-400 shadow-[0_1px_2px_rgba(57,62,86,0.5)]"></div>
           </div>
         </div>
       </main>

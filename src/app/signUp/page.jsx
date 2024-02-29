@@ -11,6 +11,7 @@ import toast from "react-hot-toast";
 import Cookies from "js-cookie";
 import Image from "next/image.js";
 import Osmoze from "../image/osmoze.png";
+import Osmoze2 from "../image/osmoze2.png";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import Google from "../image/google.svg";
@@ -215,12 +216,12 @@ export default function Page() {
       <main className="flex text-center px-20 mt-5 mb-10 flex-col  items-center justify-center ">
         <div className="w-4/12 mx-auto mt-8 p-8 bg-gray-100 rounded-md">
           <div className="flex flex-col items-center justify-center">
-            <Image src={Osmoze} alt="osmoze" width={160} height={160} />
-            <h2 className="text-2xl font-bold mb--1 text-black">
+            <Image src={Osmoze2} alt="osmoze" width={160} height={160} />
+            <h2 className="text-2xl font-bold mb-1 text-black">
               Osmoze&apos;<span className="text-sky-600">24</span>
             </h2>
 
-            <span className="text-black text-xs">SIGN UP WITH</span>
+            <span className="text-black text-xs mb-1">SIGN UP WITH</span>
             <button
               onClick={SignUpWithGoogle}
               className="text-black text-sm m-2 flex mb-5  border-2 border-gray-300 rounded-md shadow-md hover:shadow-lg hover:text-blue-600  py-1 px-2"
@@ -234,8 +235,19 @@ export default function Page() {
               />
               Google
             </button>
-            <div className=" border border-1  w-full border-gray-400 shadow-[0_1px_2px_rgba(57,62,86,0.5)]"></div>
           </div>
+          
+        <div className="flex flex-wrap">
+          <div className="text-center w-full m-auto">
+            <small className="text-grey-100 text-sm text-black ">
+              Already Registered?
+              <span className="bg-cyan-500 text-white px-2 py-2 rounded ml-1 mr-1 mb-1 uppercase shadow-md hover:shadow-lg inline-flex items-center font-bold text-xs">
+                <Link href="/signIn">Login</Link>
+              </span>
+            </small>
+          </div>
+        </div>
+        </div>
 
           {/* <form className="mt-6">
             <div className="mb-4 text-left">
@@ -299,17 +311,7 @@ export default function Page() {
               SIGN UP
             </button>
           </form> */}
-        </div>
-        <div className="flex flex-wrap mt-6 ">
-          <div className="text-left">
-            <small className="text-grey-100 text-sm text-white">
-              Already Registered?
-              <span className="bg-cyan-500 text-gray-800 px-2 py-2 rounded ml-1 mr-1 mb-1 uppercase shadow-md hover:shadow-lg inline-flex items-center font-bold text-xs">
-                <Link href="/signIn">Login</Link>
-              </span>
-            </small>
-          </div>
-        </div>
+        
       </main>
       <Footer />
     </div>
