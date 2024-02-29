@@ -6,6 +6,7 @@ import { Toaster } from "react-hot-toast";
 import "./styles/background.scss";
 import "./styles/globals.css";
 import Script from "next/script";
+
 import BackgroundEffect from "./ui/BackgroundEffect";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <AuthContextProvider>
         <body className="flex flex-col min-h-screen">
-          <div className="overlay text-xl sm:text-3xl">Please open this website on PC or Laptop.</div>
+          <div className="overlay text-xl sm:text-3xl">
+            Please open this website on PC or Laptop.
+          </div>
           <div className="background-container ">
             <BackgroundEffect />
           </div>
@@ -27,23 +30,28 @@ export default function RootLayout({ children }) {
           <Script src="script.js"></Script>
         </body>
 
-        <Toaster
-          position="top-center"
-          reverseOrder={false}
-          toastOptions={{
-            success: {
-              duration: 2000,
-            },
-            style: {
-              fontSize: "16px",
-              maxWidth: "500px",
-              padding: "16px 24px",
-              backgroundColor: "#fff",
-              color: "#374151",
-              marginBottom: "3px",
-            },
-          }}
-        />
+        <div>
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+            toastOptions={{
+              success: {
+                duration: 2000,
+              },
+              error: {
+                duration: 2000,
+              },
+              style: {
+                fontSize: "16px",
+                maxWidth: "500px",
+                padding: "16px 24px",
+                backgroundColor: "#fff",
+                color: "#374151",
+                marginBottom: "3px",
+              },
+            }}
+          />
+        </div>
       </AuthContextProvider>
     </html>
   );

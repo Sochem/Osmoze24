@@ -3,6 +3,25 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap');
 
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animated {
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .rotate-animation {
+    animation-name: rotate; 
+  }
+
 .hide-scroll-bar {
     -ms-overflow-style: none;
     scrollbar-width: none;

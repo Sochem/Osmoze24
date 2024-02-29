@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import React from "react";
@@ -49,29 +51,32 @@ const page = () => {
 
             {/* horizontal scrolling */}
 
+
+
             <div class=" flex overflow-x-scroll pb-0 hide-scroll-bar mt-14 mb-5  w-4/5 m-auto">
               <div class="flex flex-nowrap lg:ml-16 md:ml-20 ml-10 ">
                 <div class="inline-block px-3">
-                  <div class=" max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                  <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
                 </div>
                 <div class="inline-block px-3">
-                  <div class=" max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                  <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
                 </div>
                 <div class="inline-block px-3">
-                  <div class=" max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                  <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
                 </div>
                 <div class="inline-block px-3">
-                  <div class=" max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                  <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
@@ -82,3 +87,4 @@ const page = () => {
 };
 
 export default page;
+

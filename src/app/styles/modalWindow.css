@@ -3,12 +3,21 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* background-color: var(--color-grey-0);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-lg); */
   backdrop-filter: blur(4px);
   padding: 3.2rem 4rem;
   transition: all 0.5s;
+}
+:root {
+  --color-bg1: rgb(32, 16, 101);
+  --color-bg2: #21245a;
+  --color1: rgb(42, 50, 140);
+  --color2: 29, 13, 102;
+  --color3: 14, 6, 111;
+  --color4: 19, 2, 100;
+  --color5: 9, 9, 121;
+  --color-interactive: 84, 36, 229;
+  --circle-size: 80%;
+  --blending: hard-light;
 }
 
 .bg {
@@ -20,4 +29,48 @@
 
   z-index: 1000;
   transition: all 0.5s;
+}
+/* .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+} */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blur-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  transition: all 0.5s;
+}
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.window-bg {
+  /* background: linear-gradient(var(--color-bg1), var(--color-bg2)); */
+  background: url("../image/bg.png");
 }
