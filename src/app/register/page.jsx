@@ -108,14 +108,36 @@ const Page = () => {
               >
                 Branch
               </label>
-              <input
+              <select className="w-full p-2 border text-black border-gray-300 rounded "> 
+                    <option> </option>
+                    <option>Chemical Engineering</option>
+                    <option>Civil Engineering</option>
+                    <option>Computer Science and Engineering</option>
+                    <option>Electrical Engineering</option>
+                    <option>Electronics Engineering</option>
+                    <option>Mechanical Engineering</option> 
+                    <option>Metallurgical Engineering</option> 
+                    <option>Mining Engineering</option> 
+                    <option>Pharmaceutical Engineering and Technology</option> 
+                    <option>Ceramic Engineering and Technology</option> 
+                    <option>Architecture, Planning and Design</option> 
+                    <option>Department Of Chemistry</option> 
+                    <option>Department Of Mathematical Sciences</option> 
+                    <option>Department Of Physics</option> 
+                    <option>Biochemical Engineering</option> 
+                    <option>Biomedical Engineering</option> 
+                    <option>Materials Science and Technology</option> 
+                    <option>Department Of Humanistic Studies</option> 
+              </select>
+  
+              {/* <input
                 type="text"
                 id="username"
                 value={branch}
                 onChange={(e) => setBranch(e.target.value)}
                 className="w-full p-2 border text-black border-gray-300 rounded"
                 required
-              />
+              /> */}
             </div>
 
             <div className="mb-4 text-left">
@@ -125,13 +147,21 @@ const Page = () => {
               >
                 Year
               </label>
+              <select className="w-full p-2 border text-black border-gray-300 rounded "> 
+                    <option> </option>
+                    <option>First Year</option>
+                    <option>Second Year</option>
+                    <option>Third Year</option>
+                    <option>Fourth Year</option>
+                    <option>Fifth Year</option>
+              </select>      
               <input
-                type="text"
-                id="year"
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
-                className="w-full p-2 border text-black border-gray-300 rounded"
-                required
+                // type="text"
+                // id="year"
+                // value={year}
+                // onChange={(e) => setYear(e.target.value)}
+                // className="w-full p-2 border text-black border-gray-300 rounded"
+                // required
               />
             </div>
 
