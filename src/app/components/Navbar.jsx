@@ -1,13 +1,59 @@
-"use client"
-import React,{useEffect} from 'react';
-import Osmoze from '../image/osmoze.png';
-import Link from 'next/link';
-import signIn from '../../../src/app/signIn/page.jsx'
-
+"use client";
+import React from "react";
+import Osmoze from "../image/osmoze.png";
+import Link from "next/link";
+import signIn from "../../../src/app/signIn/page.jsx";
+import { useEffect } from "react";
 import Image from "next/image";
 
 const Navbar = () => {
- 
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   function updateUI() {
+  //     var authButton = document.getElementById("authButton");
+  //     var isLoggedIn = Cookies.get('User')
+
+  //     if (!isLoggedIn) {
+  //       authButton.setAttribute('value', 'Login');
+        
+  //     } else {
+  //       authButton.setAttribute('value', 'Logout');
+  //     }
+  //   }
+  //   document
+  //     .getElementById("authButton")
+  //     .addEventListener("click", function () {
+  //       var user = Cookies.get('User');
+
+  //       if (user) {
+  //         Cookies.remove('User')
+  //         console.log("calledif")
+  //       } else {
+  //         console.log("calledelse")
+  //         // Cookie.set('User', "true", 7);
+  //       }
+  //       updateUI();
+  //     });
+  //   updateUI();
+  // });
+  useEffect(() => {
+    // Ensure code only runs on the client-side
+    if (typeof document !== 'undefined' && typeof Cookies !== 'undefined') {
+        function updateUI() {
+            var authButton = document.getElementById("authButton");
+            var isLoggedIn = Cookies.get('User');
+            if (!isLoggedIn) {
+                authButton.innerText = "Login";
+            } else {
+                authButton.innerText = "Logout";
+            }
+        }
+
+        // Run updateUI function when the DOM content is loaded
+        updateUI();
+
+    }
+}, []); 
+
   return (
     <>
       <header className="sticky text-[#8DD5FF]  bg-[#09051B] lg:h-[80px] w-full lg:flex lg:align-middle font-serif shadow-md tracking-wide shadow-black/5 fixed">
@@ -23,9 +69,9 @@ const Navbar = () => {
               <Link href="/events">Events</Link>
             </li>
             <li className=" hover:text-[1.26rem]">
-            <a href="https://www.instagram.com/sochem_iitbhu/">
-                    Announcement
-                  </a>
+              <a href="https://www.instagram.com/sochem_iitbhu/">
+                Announcement
+              </a>
             </li>
             <li className=" hover:text-[1.26rem]">
               <Link href="/dashBoard">Dashboard</Link>
