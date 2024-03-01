@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Page from "../dashBoard2/Page.jsx";
 
 import Link from "next/link";
@@ -11,8 +10,10 @@ import Image2 from "../image/image2.png";
 import Event from "./Event.jsx";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
-import { useEffect } from "react";
+import  React, { useState,useEffect } from "react";
 import { UserAuth } from "../firebase/firebaseConfig.js";
+import EventCard from "../ui/EventCard";
+import EventDataService from "../Services/event.js";
 const Dashboard = () => {
   const {
     userId,
@@ -29,6 +30,10 @@ const Dashboard = () => {
     setCurrentUserId,
     isModalOpen,
     setIsModalOpen,
+    events,
+      setEvents,
+      eventId,
+      setEventId,
   } = UserAuth();
 
   useEffect(() => {
@@ -51,6 +56,28 @@ const Dashboard = () => {
     console.log("The ID of document to be edited: ", id);
     setUserId(id);
   };
+
+  
+  useEffect(() => {
+    const getEvent = async () => {
+      const data = await EventDataService.getAllEvents();
+      setEvents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getEvent();
+  }, []);
+  // const openModal = (e) => {
+  //   e.preventDefault();
+  //   setIsModalOpen(true);
+  // };
+
+  // const closeModal = (e) => {
+  //   e.preventDefault();
+  //   setIsModalOpen(false);
+  // };
+  const handleId = (id) => {
+    setEventId(id);
+  };
+
   return (
     <>
       <div className=" font-serif flex m-0">
@@ -89,26 +116,58 @@ const Dashboard = () => {
 
             <div class=" flex overflow-x-scroll pb-0 hide-scroll-bar mt-14 mb-5  w-4/5 m-auto">
               <div class="flex flex-nowrap lg:ml-16 md:ml-20 ml-10 ">
-                <div class="inline-block px-3">
+              { events?.map((doc, index) => {
+              return (
+                <>
+                  <div
+                    className="inline-block mx-5 px-3 border border-gray-200/15 rounded-2xl bg-gray-200/15  mt-9 w-11/12   lg:w-11/12"
+                    key={doc.id}
+                  >
+                    <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out h-300px w-11/12 m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4">
+                      <Image
+                        className=" border rounded-2xl inline-block h-[50px] w-[250px]"
+                        src="/image.png"
+                        width={300}
+                        height={300}
+                        alt="events"
+                      />
+                    </div>
+                    <p className="text-3xl m-auto text-white mb-2 ">
+                      {doc.name}
+                    </p>
+                    <div className="m-auto w-4/12 mb-2 p-1">
+                      <button
+                        onClick={(e) => {
+                          handleId(doc.id);
+
+                          openModal(e);
+                        }}
+                        className="font-thin p-1  mb-2 w-11/12   text-center text-black border rounded-md border-white bg-white"
+                      >
+                        Read more
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* <EventCard isOpen={isModalOpen} id={eventId} /> */}
+                </>
+              );
+            })}
+                {/* <div class="inline-block px-3">
                   <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
-                </div>
-                <div class="inline-block px-3">
+                </div> */}
+                {/* <div class="inline-block px-3">
                   <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
-                </div>
-                <div class="inline-block px-3">
+                </div> */}
+                {/* <div class="inline-block px-3">
                   <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
                     <Event />
                   </div>
-                </div>
-                <div class="inline-block px-3">
-                  <div class=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                    <Event />
-                  </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
