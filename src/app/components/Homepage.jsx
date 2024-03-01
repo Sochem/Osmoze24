@@ -3,9 +3,14 @@ import Image from "next/image";
 import bluecir from "../image/bluecir.png";
 import Link from 'next/link';
 import home2 from "../image/home2.png";
+import ari from "../image/ari.jpg";
 import Ozmo from "../image/Ozmo.png";
+import irc from "../image/irc.png";
 import text1 from "../image/text1.png";
 import text3 from "../image/text3.png";
+import lovin from "../image/lovin.jpg";
+import Sponsors from "../image/Sponsors.png";
+import ASL from "../image/ASL.jpg";
 import home from "../image/home.png";
 import magic from "../image/magic.png";
 import React, { useEffect, useState } from "react";
@@ -82,83 +87,63 @@ const Homepage = () => {
             <div className="flex text-gray-300"></div>
           </div>
         </div>
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="text-black sm:text-3xl text-2xl font-l title-font:Modern mb-4">
-              Meet our Sponsors
-            </h1>
+        <div className="container px-5 py-24 my-50 mx-auto">
+          <div className="w-full flex flex-col mb-16 items-center text-center0">
+          <Image
+                  src={Sponsors}
+                  width={400}
+                  height={600}
+                  alt="Picture of the author"
+                />
           </div>
-          <div className="flex flex-wrap -m-4">
-            <div className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative">
-                <Image
-                  className="absolute inset-0 w-full h-full object-cover object-center"
-                  src={home2}
+          <section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col">
+    </div>
+    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+      <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
+        <div class="rounded-lg h-84 overflow-hidden">
+        <Image
+                  src={irc}
                   width={600}
-                  height={360}
+                  height={600}
                   alt="Picture of the author"
                 />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h2 className="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">
-                    THE SUBTITLE
-                  </h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">
-                    Shooting Stars
-                  </h1>
-                  <p className="leading-relaxed">
-                    Photo booth fam kinfolk cold-pressed sriracha leggings
-                    jianbing microdosing tousled waistcoat.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative">
-                <Image
-                  className="absolute inset-0 w-full h-full object-cover object-center"
-                  src={home2}
+        </div>
+      </div>
+      <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
+      <div class="rounded-lg h-84 overflow-hidden">
+        <Image
+                  src={ASL}
                   width={600}
-                  height={360}
+                  height={600}
                   alt="Picture of the author"
                 />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h2 className="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">
-                    THE SUBTITLE
-                  </h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">
-                    The Catalyzer
-                  </h1>
-                  <p className="leading-relaxed">
-                    Photo booth fam kinfolk cold-pressed sriracha leggings
-                    jianbing microdosing tousled waistcoat.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="lg:w-1/3 sm:w-1/2 p-4">
-              <div className="flex relative">
-                <Image
-                  className="absolute inset-0 w-full h-full object-cover object-center"
-                  src={home2}
+        </div>
+      </div>
+      <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
+      <div class="rounded-lg h-84 overflow-hidden">
+        <Image
+                  src={lovin}
                   width={600}
-                  height={360}
+                  height={600}
                   alt="Picture of the author"
                 />
-                <div className="px-8 py-10 relative z-10 w-full border-4 border-gray-800 bg-gray-900 opacity-0 hover:opacity-100">
-                  <h2 className="tracking-widest text-sm title-font font-medium text-indigo-400 mb-1">
-                    THE SUBTITLE
-                  </h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">
-                    The 400 Blows
-                  </h1>
-                  <p className="leading-relaxed">
-                    Photo booth fam kinfolk cold-pressed sriracha leggings
-                    jianbing microdosing tousled waistcoat.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
+      <div class="rounded-lg h-84 overflow-hidden">
+        <Image
+                  src={ari}
+                  width={600}
+                  height={600}
+                  alt="Picture of the author"
+                />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
         </div>
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
@@ -230,6 +215,7 @@ const Homepage = () => {
             </div>
           </div>
         </div>
+        
       </section>
     </div>
   );
