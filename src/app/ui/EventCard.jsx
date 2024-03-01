@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import EventService from "../Services/event.js";
+import UserService from "../Services/services.js";
 import { UserAuth } from "../firebase/firebaseConfig";
 import toast from "react-hot-toast";
 import { doc, getDoc } from "firebase/firestore";
@@ -10,7 +11,8 @@ import "../styles/modalWindow.css";
 import { RxCross1 } from "react-icons/rx";
 
 const EventCard = ({ isOpen, id }) => {
-  const { events, setEvents, isModalOpen, setIsModalOpen } = UserAuth();
+  const { events, setEvents, currentUserId, isModalOpen, setIsModalOpen } =
+    UserAuth();
 
   useEffect(() => {
     const getEvent = async () => {
@@ -26,13 +28,15 @@ const EventCard = ({ isOpen, id }) => {
     setIsModalOpen(false);
   };
   const handleRegister = async (e, id) => {
-    const docRef = doc(db, "events", id);
-    const docSnap = await getDoc(docRef);
-    const isRegistered = docSnap.data().registered;
-
+    const userRef = doc(db, "users", currentUserId);
+    const userSnap = await getDoc(userRef);
+    const registeredEvents = userSnap.data().registeredEvents;
     try {
-      if (id !== undefined && id !== "" && isRegistered == false) {
-        await EventService.updateEvent(id, { registered: true });
+      if (id !== undefined && id !== "") {
+        const updatedRegisteredEvents = [...registeredEvents, id];
+        await UserService.updateUser(currentUserId, {
+          registeredEvents: updatedRegisteredEvents,
+        });
         closeModal(e);
         toast.success("  You are successfully registered for the event! ");
       } else {
@@ -42,26 +46,10 @@ const EventCard = ({ isOpen, id }) => {
     } catch (err) {
       console.log(err);
     }
-
-    // try {
-    //   if (id !== undefined && id !== "") {
-    //     await EventService.updateEvent(id, { registered: true });
-    //     closeModal(e);
-    //     toast.success("  You are successfully registered for the event! ");
-    //   }
-    // } catch (err) {
-    //   console.log(err);
-    // }
   };
   return (
     <div className="blur-background">
       <div className="modal-overlay">
-        {/* <Modal
-          isOpen={isOpen}
-          onRequestClose={closeModal}
-          contentLabel="Edit Modal"
-          className="modal-background "
-        > */}
         {events.map((doc, index) => {
           if (doc.id == id) {
             return (
@@ -94,7 +82,6 @@ const EventCard = ({ isOpen, id }) => {
                       {doc.coordinator_1_contact}
                     </div>
                     <div className="col-end-7 col-span-2 ">
-                      {" "}
                       {doc.coordinator_2_contact}
                     </div>
                   </div>
@@ -117,7 +104,6 @@ const EventCard = ({ isOpen, id }) => {
             );
           }
         })}
-        {/* </Modal> */}
       </div>
     </div>
   );
