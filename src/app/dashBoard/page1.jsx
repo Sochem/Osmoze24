@@ -12,7 +12,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import  React, { useState,useEffect } from "react";
 import { UserAuth } from "../firebase/firebaseConfig.js";
-import EventCard from "../ui/EventCard";
+import EventCard from "../ui/EventCard.jsx";
 import EventDataService from "../Services/event.js";
 const Dashboard = () => {
   const {

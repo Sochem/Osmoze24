@@ -3,6 +3,26 @@ import Image from "next/image";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
+import dipansh from'../image/dipanshJain.jpg'
+import aman from '../image/amanSharma.jpg'
+import visham from '../image/visham.jpg'
+import harsh from '../image/harsh.jpg'
+import Devansh from '../image/devansh.jpeg'
+import Pranjal from '../image/pranjal.jpg'
+import Amber from '../image/amber.jpg'
+import Ajit from '../image/ajit.jpg'
+import HarshJain from '../image/harshJain.jpg'
+import Manav from '../image/manav.jpg'
+import Saumyajeet from '../image/saumyajeet.jpg'
+import Aryan from '../image/aryan.jpg'
+import Manvendra from '../image/manvendra.jpg'
+import Dibyanshu from '../image/Dibyanshu.jpg'
+import Pratham from '../image/Pratham.jpg'
+import Deepshikha from '../image/Deepshikha.jpg'
+import Mrunal from '../image/Mrunal.jpg'
+import Sumit from '../image/Sumit.jpg'
+import Anukriti from '../image/Anukriti.jpg'
+
 // import osmoze from '../image/oszome.png';
 
 const team = () => {
@@ -21,7 +41,7 @@ const team = () => {
             width={200}
             height={200}
             class="h-[250px] rounded w-[250px] object-cover object-center mb-6 z-10"
-            src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+            src={dipansh}
             alt="content"
           />
           <h3 class="tracking-widest text-indigo-500 text-xl font-medium  text-white title-font text-center	  font-modern">
@@ -37,7 +57,7 @@ const team = () => {
             width={200}
             height={200}
             class="h-[250px] rounded w-[250px] object-cover object-center mb-6"
-            src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+            src={aman}
             alt="content"
           />
           <h3 class="tracking-widest text-indigo-500 text-xl font-medium text-white  title-font text-center	 font-modern">
@@ -58,8 +78,8 @@ const team = () => {
               <Image
                 width={200}
                 height={200}
-                class=" rounded w-full object-cover object-center mb-6"
-                src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+                class="h-[200px] rounded w-full object-cover object-center mb-6"
+                src={visham}
                 alt="content"
               />
               <h3 class="tracking-widest text-indigo-500 text-xl text-white  font-medium title-font text-center  font-modern	">
@@ -75,15 +95,17 @@ const team = () => {
               <Image
                 width={200}
                 height={200}
-                class="h-324px rounded w-full my-4 object-cover object-center mb-6"
-                src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+                class="h-[200px] rounded w-full my-4 object-cover object-center mb-6"
+                src={
+                  Sumit
+                }
                 alt="content"
               />
               <div className="my-[10px]">
               <h3 class="tracking-widest  text-xl text-white  font-medium title-font text-center	 font-modern">
                 Convener
               </h3>
-              <h3 class="tracking-widest  text-xl text-white  font-medium title-font text-center	 font-modern">
+              <h3 class="tracking-widest  text-xl text-white mb-[2.7rem] font-medium title-font text-center	 font-modern">
                 Sumit Jena
               </h3>
               </div>
@@ -94,8 +116,8 @@ const team = () => {
               <Image
                 width={200}
                 height={200}
-                class="h-324px rounded w-full object-cover object-center mb-6"
-                src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+                class="h-[200px] rounded w-full object-cover object-center mb-6"
+                src={harsh}
                 alt="content"
               />
               <h3 class="tracking-widest text-indigo-500 text-xl text-white  font-medium title-font text-center  font-modern	">
@@ -124,11 +146,11 @@ const team = () => {
               <Image
                 width={200}
                 height={200}
-                class="h-324px rounded w-full object-cover object-center mb-6"
-                src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+                class="h-[200px] rounded w-full object-cover object-center mb-6"
+                src={Devansh}
                 alt="content"
               />
-              <h3 class="tracking-widest text-indigo-500 text-xl text-white  font-medium title-font text-center	 font-modern">
+              <h3 class="tracking-[0.1rem] w-full text-xl text-white  font-medium title-font text-center	 font-modern">
                 Devansh Choudhary
               </h3>
             </div>
@@ -138,8 +160,10 @@ const team = () => {
               <Image
                 width={200}
                 height={200}
-                class="h-324px rounded w-full object-cover object-center mb-6"
-                src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+                class="h-[200px] rounded w-full object-cover object-center mb-6"
+                src={
+                  Deepshikha
+                }
                 alt="content"
               />
               <h3 class="tracking-widest text-indigo-500 text-xl text-white  font-medium title-font text-center  font-modern	">
@@ -152,8 +176,8 @@ const team = () => {
               <Image
                 width={200}
                 height={200}
-                class="h-324px rounded w-full object-cover object-center mb-6"
-                src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+                class="h-[200px] rounded w-full object-cover object-center mb-6"
+                src={Pranjal}
                 alt="content"
               />
               <h3 class="tracking-widest text-indigo-500 text-xl text-white  font-medium title-font text-center  font-modern	">
@@ -177,7 +201,9 @@ const team = () => {
               width={200}
               height={200}
               class="h-[200px] rounded w-[200px] object-cover object-center mb-6"
-              src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+              src={
+                Anukriti
+              }
               alt="content"
             />
             <h3 class="tracking-widest text-white text-xl font-medium title-font text-center	 font-modern">
@@ -190,7 +216,7 @@ const team = () => {
               width={200}
               height={200}
               class="h-[200px] rounded w-[200px] object-cover object-center mb-6"
-              src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+              src={Amber}
               alt="content"
             />
             <h3 class="tracking-widest  text-xl text-white font-medium title-font text-center  font-modern	">
@@ -213,11 +239,13 @@ const team = () => {
               width={200}
               height={200}
               class="h-[200px] rounded w-[200px] object-cover object-center mb-6"
-              src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+              src={
+                Ajit
+              }
               alt="content"
             />
             <h3 class="tracking-widest text-white text-xl font-medium title-font text-center  font-modern	">
-              Ajit Prajadarshi
+              Ajit Priyadarshi
             </h3>
           </div>
 
@@ -226,7 +254,9 @@ const team = () => {
               width={200}
               height={200}
               class="h-[200px] rounded w-[200px] object-cover object-center mb-6"
-              src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+              src={
+                Mrunal
+              }
               alt="content"
             />
             <h3 class="tracking-widest text-white text-xl font-medium title-font text-center	 font-modern">
@@ -249,7 +279,9 @@ const team = () => {
               width={200}
               height={200}
               class="h-[200px] rounded w-[200px] object-cover object-center mb-6"
-              src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+              src={
+                HarshJain
+              }
               alt="content"
             />
             <h3 class="tracking-widest text-xl text-white font-medium title-font text-center  font-modern	">
@@ -262,7 +294,9 @@ const team = () => {
               width={200}
               height={200}
               class="h-[200px] rounded w-[200px] object-cover object-center mb-6"
-              src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+              src={
+                Pratham
+              }
               alt="content"
             />
             <h3 class="tracking-widest text-white text-xl font-medium title-font text-center  font-modern	">
@@ -285,7 +319,9 @@ const team = () => {
               width={200}
               height={200}
               class="h-[200px] rounded w-[200px] object-cover object-center mb-6"
-              src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+              src={
+                Manav
+              }
               alt="content"
             />
             <h3 class="tracking-widest text-white text-xl font-medium title-font text-center  font-modern	">
@@ -298,7 +334,7 @@ const team = () => {
               width={200}
               height={200}
               class="h-[200px] rounded w-[200px] object-cover object-center mb-6"
-              src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+              src={Saumyajeet}
               alt="content"
             />
             <h3 class="tracking-widest text-white text-xl font-medium title-font text-center	 font-modern">
@@ -321,8 +357,8 @@ const team = () => {
               <Image
                 width={200}
                 height={200}
-                class="h-324px rounded w-full object-cover object-center mb-6"
-                src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+                class="h-[200px] rounded w-full object-cover object-center mb-6"
+                src={Aryan}
                 alt="content"
               />
               <h3 class="tracking-widest  text-xl text-white font-medium title-font text-center	 font-modern">
@@ -335,8 +371,8 @@ const team = () => {
               <Image
                 width={200}
                 height={200}
-                class="h-324px rounded w-full object-cover object-center mb-6"
-                src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+                class="h-[200px] rounded w-full object-cover object-center mb-6"
+                src={Dibyanshu}
                 alt="content"
               />
               <h3 class="tracking-widest  text-xl font-medium title-font text-center text-white font-modern	">
@@ -349,8 +385,8 @@ const team = () => {
               <Image
                 width={200}
                 height={200}
-                class="h-324px rounded w-full object-cover object-center mb-6"
-                src="https://buffer.com/cdn-cgi/image/w=1000,fit=contain,q=90,f=auto/library/content/images/size/w600/2023/10/free-images.jpg"
+                class="h-[200px] rounded w-full object-cover object-center mb-6"
+                src={Manvendra}
                 alt="content"
               />
               <h3 class="tracking-widest text-indigo-500 text-xl font-medium  text-white title-font text-center  font-modern	">
