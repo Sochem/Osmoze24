@@ -68,7 +68,7 @@ const Page = () => {
                     <div className=" h-300px w-11/12 m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4 ">
                       <Image
                         className=" border rounded-2xl inline-block "
-                        src="/image.png"
+                        src={doc.display_picture}
                         width={300}
                         height={300}
                         alt="events"
