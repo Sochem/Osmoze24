@@ -17,8 +17,6 @@ const Page = () => {
     userName,
     setUserName,
     email,
-    // password,
-    // setPassword,
     branch,
     setBranch,
     year,
@@ -26,6 +24,8 @@ const Page = () => {
     phone,
     setPhone,
     setUsers,
+    registeredEvents,
+    setRegisteredEvents,
   } = UserAuth();
   const router = useRouter();
 
@@ -46,6 +46,7 @@ const Page = () => {
       email: email,
       year,
       phone,
+      registeredEvents,
     };
     console.log(newUser);
 
@@ -54,7 +55,6 @@ const Page = () => {
       console.log("userId:", data.id);
       const UserId = data.id;
       Cookies.set("User", UserId);
-      // setMessage({ error: false, msg: "New User added successfully!" });
     } catch (err) {
       console.log(err);
     }
@@ -63,8 +63,8 @@ const Page = () => {
     setBranch("");
     setYear("");
     setPhone("");
+    setRegisteredEvents([]);
     toast.success("You are successfully registered!");
-
     setTimeout(() => {
       router.push("/");
     }, 1000);
