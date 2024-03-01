@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Page from "../dashBoard2/Page.jsx";
 import Cookies from "js-cookie";
 import Link from "next/link";
@@ -8,12 +7,15 @@ import UserDataService from "../Services/services.js";
 import Image from "next/image";
 import Image1 from "../image/image1.png";
 import "../styles/globals.css";
+
 import Image2 from "../image/image2.png";
 import Event from "./Event.jsx";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
-import { useEffect } from "react";
 import { UserAuth } from "../firebase/firebaseConfig.js";
+import  React, { useState,useEffect } from "react";
+import EventCard from "../ui/EventCard.jsx";
+import EventDataService from "../Services/event.js";
 const Dashboard = () => {
   const {
     userId,
@@ -30,6 +32,10 @@ const Dashboard = () => {
     setCurrentUserId,
     isModalOpen,
     setIsModalOpen,
+    events,
+      setEvents,
+      eventId,
+      setEventId,
   } = UserAuth();
 
   useEffect(() => {
@@ -53,6 +59,26 @@ const Dashboard = () => {
     setUserId(id);
   };
   const url = Cookies.get("Photo");
+
+  useEffect(() => {
+    const getEvent = async () => {
+      const data = await EventDataService.getAllEvents();
+      setEvents(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getEvent();
+  }, []);
+  const openModal1 = (e) => {
+    e.preventDefault();
+    setIsModalOpen(true);
+  };
+
+  const closeModal1 = (e) => {
+    e.preventDefault();
+    setIsModalOpen(false);
+  };
+  const handleId = (id) => {
+    setEventId(id);
+  };
   return (
     <>
       <div className=" font-serif flex m-0">
@@ -110,28 +136,46 @@ const Dashboard = () => {
 
             {/* horizontal scrolling */}
 
-            <div className=" flex overflow-x-scroll pb-0 hide-scroll-bar mt-14 mb-5  w-4/5 m-auto">
+            <div className=" flex overflow-x-scroll pb-0 hide-scroll-bar mt-8 mb-5  w-4/5 m-auto">
               <div className="flex flex-nowrap lg:ml-16 md:ml-20 ml-10 ">
-                <div className="inline-block px-3">
-                  <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                    <Event />
+              { events?.map((doc, index) => {
+              return (
+                <>
+                  <div
+                    className="inline-block mx-5 px-3 border border-gray-200/15 rounded-2xl bg-gray-200/15  w-[200px]   lg:w-11/12"
+                    key={doc.id}
+                  >
+                    <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out h-300px w-[200px] m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4">
+                      <Image
+                        className=" border rounded-2xl inline-block h-[100px] w-[200px]"
+                        src="/image.png"
+                        width={300}
+                        height={300}
+                        alt="events"
+                      />
+                    </div>
+                    <p className="text-xl text-center m-auto text-white mb-2 ">
+                      {doc.name}
+                    </p>
+                    <div className="m-auto w-[100px] mb-2">
+                      <button
+                        onClick={(e) => {
+                          handleId(doc.id);
+
+                          openModal1(e);
+                        }}
+                        className=" text-sm  mb-2 w-[100px] h-8  text-center text-black border rounded-md border-white bg-white"
+                      >
+                        Read more
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div className="inline-block px-3">
-                  <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                    <Event />
-                  </div>
-                </div>
-                <div className="inline-block px-3">
-                  <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                    <Event />
-                  </div>
-                </div>
-                <div className="inline-block px-3">
-                  <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                    <Event />
-                  </div>
-                </div>
+
+                  {/* <EventCard isOpen={isModalOpen} id={eventId} /> */}
+                </>
+              );
+            })}
+                
               </div>
             </div>
           </div>
