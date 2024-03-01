@@ -23,6 +23,7 @@ const AuthContextProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const [registeredEvents, setRegisteredEvents] = useState([]);
+  const [userEvents, setUserEvents] = useState([]);
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider);
@@ -66,6 +67,8 @@ const AuthContextProvider = ({ children }) => {
         setEventId,
         registeredEvents,
         setRegisteredEvents,
+        userEvents,
+        setUserEvents,
       }}
     >
       {children}

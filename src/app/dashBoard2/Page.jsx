@@ -16,7 +16,7 @@ const Page = () => {
               alt=""
               width={120}
               height={120}
-              className="h-[120px] w-[120px]"
+              className="h-[120px] w-[120px] mt-10"
             />
           </Link>
         </div>

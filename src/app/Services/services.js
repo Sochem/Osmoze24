@@ -17,7 +17,7 @@ class UserDataService {
     return addDoc(userInfoRef, newUser);
   };
 
-  //upadte
+  //update
   updateUser = (id, updatedUser) => {
     const userDoc = doc(db, "users", id);
     return updateDoc(userDoc, updatedUser);
