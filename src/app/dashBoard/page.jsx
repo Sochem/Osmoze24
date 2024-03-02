@@ -12,6 +12,8 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import { useEffect, useState } from "react";
 import { UserAuth } from "../firebase/firebaseConfig.js";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../../firebase";
 const Dashboard = () => {
   const {
     userId,
@@ -20,10 +22,27 @@ const Dashboard = () => {
     setUsers,
     events,
     setEvents,
+    userEvents,
+    setUserEvents,
     isModalOpen,
     setIsModalOpen,
   } = UserAuth();
-  const userEvents = [];
+
+  const userID = Cookies.get("User");
+
+  useEffect(() => {
+    const getUserEvents = async () => {
+      const userRef = doc(db, "users", userID);
+      const userSnap = await getDoc(userRef);
+      const userData = userSnap.data();
+      const registeredEvents = userData.registeredEvents;
+      const updatedEvents = [...userEvents, ...registeredEvents];
+      setUserEvents(updatedEvents);
+    };
+    getUserEvents();
+  }, []);
+  // console.log(userEvents);
+  // console.log(userEvents.length);
   useEffect(() => {
     const getEvent = async () => {
       const data = await EventDataService.getAllEvents();
@@ -38,18 +57,7 @@ const Dashboard = () => {
     };
     getUser();
   }, []);
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
 
-  const closeModal = (e) => {
-    e.preventDefault();
-    setIsModalOpen(false);
-  };
-  const getUserId = (id) => {
-    console.log("The ID of document to be edited: ", id);
-    setUserId(id);
-  };
   const url = Cookies.get("Photo");
 
   return (
@@ -112,14 +120,32 @@ const Dashboard = () => {
                 <div className=" flex overflow-x-scroll pb-0 hide-scroll-bar mt-14 mb-5  w-4/5 m-auto">
                   <div className="flex flex-nowrap lg:ml-16 md:ml-20 ml-10 ">
                     {events.map((doc) => {
-                      if (doc.registered == true) {
+                      if (userEvents.includes(doc.id)) {
                         return (
-                          <div className="inline-block px-3" key={doc.id}>
-                            <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-                              {/* <Event /> */}
-                              {doc.name}
+                          // <div className="inline-block px-3" key={doc.id}>
+                          //   <div className="max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+                          //     {doc.name}
+                          //   </div>
+                          // </div>
+                          <>
+                            <div
+                              className="inline-block mx-5 px-3 border border-gray-200/15 rounded-2xl bg-gray-200/15  w-[200px]   lg:w-11/12"
+                              key={doc.id}
+                            >
+                              <div className=" max-w-xs overflow-hidden rounded-xl shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out h-300px w-[200px] m-auto my-4 placeholder-opacity-100 grid place-items-center lg:p-2 lg:m-4">
+                                <Image
+                                  className=" border rounded-2xl inline-block h-[100px] w-[200px]"
+                                  src={doc.display_picture}
+                                  width={300}
+                                  height={300}
+                                  alt="events"
+                                />
+                              </div>
+                              <p className="text-xl text-center m-auto text-white mb-2 ">
+                                {doc.name}
+                              </p>
                             </div>
-                          </div>
+                          </>
                         );
                       }
                     })}

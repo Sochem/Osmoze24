@@ -5,15 +5,23 @@ import EventService from "../Services/event.js";
 import UserService from "../Services/services.js";
 import { UserAuth } from "../firebase/firebaseConfig";
 import toast from "react-hot-toast";
-import { doc, getDoc } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  collection,
+  where,
+} from "firebase/firestore";
 import { db } from "../../../firebase";
 import "../styles/modalWindow.css";
 import { RxCross1 } from "react-icons/rx";
+import { arrayUnion } from "firebase/firestore";
+import Cookies from "js-cookie";
 
 const EventCard = ({ isOpen, id }) => {
-  const { events, setEvents, currentUserId, isModalOpen, setIsModalOpen } =
-    UserAuth();
-
+  const { events, setEvents, isModalOpen, setIsModalOpen } = UserAuth();
+  const userID = Cookies.get("User");
   useEffect(() => {
     const getEvent = async () => {
       const data = await EventService.getAllEvents();
@@ -27,16 +35,30 @@ const EventCard = ({ isOpen, id }) => {
     console.log("closing again");
     setIsModalOpen(false);
   };
+  const checkIfValueExists = async (collectionName, fieldName, value) => {
+    const q = query(
+      collection(db, collectionName),
+      where(fieldName, "array-contains", value)
+    );
+    const querySnapshot = await getDocs(q);
+    return !querySnapshot.empty;
+  };
+
+  // Example usage:
   const handleRegister = async (e, id) => {
-    const userRef = doc(db, "users", currentUserId);
-    const userSnap = await getDoc(userRef);
-    const registeredEvents = userSnap.data().registeredEvents;
+    const valueExists = await checkIfValueExists(
+      "users",
+      "registeredEvents",
+      id
+    );
+
     try {
-      if (id !== undefined && id !== "") {
-        const updatedRegisteredEvents = [...registeredEvents, id];
-        await UserService.updateUser(currentUserId, {
-          registeredEvents: updatedRegisteredEvents,
-        });
+      if (id !== undefined && id !== "" && valueExists == false) {
+        const updatedUser = {
+          registeredEvents: arrayUnion(id),
+        };
+        await UserService.updateUser(userID, updatedUser);
+
         closeModal(e);
         toast.success("  You are successfully registered for the event! ");
       } else {
