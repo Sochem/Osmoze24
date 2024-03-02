@@ -21,11 +21,11 @@ const page = () => {
           />
           </div>
           <div className="lg:flex-grow mr-32 md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
+            <h1 className="title-font sm:text-5xl text-4xl mb-4 font-medium text-white">
               Who are we?
               <br className="hidden lg:inline-block" />
             </h1>
-            <p class="mb-8 leading-relaxed ">
+            <p class="mb-8 sm:text-2xl leading-relaxed ">
             The Society of Chemical Engineers a.k.a SoChem is a society run by the students of the department for the students of the department. SoChem ensures that each and every student within the department gets the most out of their time with us at IIT(BHU) Varanasi.The society as a whole has strong links with various industries in the engineering and financial sectors. The society organizes presentations from company representatives and application days, held within the department itself, directly aimed at chemical engineering students.The society also organizes its departmental fest: Osmoze once in a year which extract out the prestigious innovations of students.
             </p>
           </div>
@@ -34,11 +34,11 @@ const page = () => {
       <section className="text-gray-400 body-font">
         <div className="container mx-auto flex px-5 py-4 pb-20 md:flex-row flex-col items-center">
           <div className="lg:flex-grow mr-32 md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center pt-40">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
+            <h1 className="title-font sm:text-5xl text-4xl mb-4 font-medium text-white">
                Our Mission
               <br className="hidden lg:inline-block" />
             </h1>
-            <p className="mb-8 leading-relaxed">
+            <p className="mb-8 sm:text-2xl leading-relaxed">
             The society involves various budding chemical engineers from all the years. The society provides a platform for students to improve on their skills & personality. It also brings back the experience of our esteemed alumni for the benefit of the students. Various activities such as workshops, GDs, case studies, placement & internship sessions are organized by the society throughout the year. The society also organizes its departmental fest: Osmoze once in a year which extract out the prestigious innovations of students.
             </p>
           </div>

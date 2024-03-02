@@ -14,7 +14,7 @@ const Navbar = () => {
 
   //     if (!isLoggedIn) {
   //       authButton.setAttribute('value', 'Login');
-
+        
   //     } else {
   //       authButton.setAttribute('value', 'Logout');
   //     }
@@ -37,21 +37,22 @@ const Navbar = () => {
   // });
   useEffect(() => {
     // Ensure code only runs on the client-side
-    if (typeof document !== "undefined" && typeof Cookies !== "undefined") {
-      function updateUI() {
-        var authButton = document.getElementById("authButton");
-        var isLoggedIn = Cookies.get("User");
-        if (!isLoggedIn) {
-          authButton.innerText = "Login";
-        } else {
-          authButton.innerText = "Logout";
+    if (typeof document !== 'undefined' && typeof Cookies !== 'undefined') {
+        function updateUI() {
+            var authButton = document.getElementById("authButton");
+            var isLoggedIn = Cookies.get('User');
+            if (!isLoggedIn) {
+                authButton.innerText = "Login";
+            } else {
+                authButton.innerText = "Logout";
+            }
         }
-      }
 
-      // Run updateUI function when the DOM content is loaded
-      updateUI();
+        // Run updateUI function when the DOM content is loaded
+        updateUI();
+
     }
-  }, []);
+}, []); 
 
   return (
     <>
