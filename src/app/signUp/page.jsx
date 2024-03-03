@@ -86,9 +86,10 @@ export default function Page() {
       console.log(data);
       const userEmail = data.user.email;
       Cookies.set("Photo", data.user.photoURL);
+      Cookies.set("Email", userEmail);
       if (userEmail.endsWith("@itbhu.ac.in")) {
         if (users.find((doc) => doc.email == data.user.email) == undefined) {
-          setEmail(data.user.email);
+          setEmail(userEmail);
           toast.custom((t) => (
             <div
               className={`${
@@ -236,20 +237,20 @@ export default function Page() {
               Google
             </button>
           </div>
-          
-        <div className="flex flex-wrap">
-          <div className="text-center w-full m-auto">
-            <small className="text-grey-100 text-sm text-black ">
-              Already Registered?
-              <span className="bg-cyan-500 text-white px-2 py-2 rounded ml-1 mr-1 mb-1 uppercase shadow-md hover:shadow-lg inline-flex items-center font-bold text-xs">
-                <Link href="/signIn">Login</Link>
-              </span>
-            </small>
+
+          <div className="flex flex-wrap">
+            <div className="text-center w-full m-auto">
+              <small className="text-grey-100 text-sm text-black ">
+                Already Registered?
+                <span className="bg-cyan-500 text-white px-2 py-2 rounded ml-1 mr-1 mb-1 uppercase shadow-md hover:shadow-lg inline-flex items-center font-bold text-xs">
+                  <Link href="/signIn">Login</Link>
+                </span>
+              </small>
+            </div>
           </div>
         </div>
-        </div>
 
-          {/* <form className="mt-6">
+        {/* <form className="mt-6">
             <div className="mb-4 text-left">
               <label
                 htmlFor="username"
@@ -311,7 +312,6 @@ export default function Page() {
               SIGN UP
             </button>
           </form> */}
-        
       </main>
       <Footer />
     </div>
