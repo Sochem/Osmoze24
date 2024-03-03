@@ -7,36 +7,7 @@ import { useEffect } from "react";
 import Image from "next/image";
 
 const Navbar = () => {
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   function updateUI() {
-  //     var authButton = document.getElementById("authButton");
-  //     var isLoggedIn = Cookies.get('User')
-
-  //     if (!isLoggedIn) {
-  //       authButton.setAttribute('value', 'Login');
-        
-  //     } else {
-  //       authButton.setAttribute('value', 'Logout');
-  //     }
-  //   }
-  //   document
-  //     .getElementById("authButton")
-  //     .addEventListener("click", function () {
-  //       var user = Cookies.get('User');
-
-  //       if (user) {
-  //         Cookies.remove('User')
-  //         console.log("calledif")
-  //       } else {
-  //         console.log("calledelse")
-  //         // Cookie.set('User', "true", 7);
-  //       }
-  //       updateUI();
-  //     });
-  //   updateUI();
-  // });
   useEffect(() => {
-    // Ensure code only runs on the client-side
     if (typeof document !== 'undefined' && typeof Cookies !== 'undefined') {
         function updateUI() {
             var authButton = document.getElementById("authButton");
@@ -47,8 +18,6 @@ const Navbar = () => {
                 authButton.innerText = "Logout";
             }
         }
-
-        // Run updateUI function when the DOM content is loaded
         updateUI();
 
     }

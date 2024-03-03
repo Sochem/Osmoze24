@@ -6,7 +6,10 @@ import home2 from "../image/home2.png";
 import ari from "../image/ari.jpg";
 import Ozmo from "../image/Ozmo.png";
 import irc from "../image/irc.png";
+import Explore from "../image/Explore.png";
+import Footer from "../image/Footer.png";
 import text1 from "../image/text1.png";
+import text4 from "../image/text4.png";
 import text3 from "../image/text3.png";
 import lovin from "../image/lovin.jpg";
 import Sponsors from "../image/Sponsors.png";
@@ -14,7 +17,6 @@ import ASL from "../image/ASL.jpg";
 import home from "../image/home.png";
 import magic from "../image/magic.png";
 import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar";
 
 
 const Homepage = () => {
@@ -52,9 +54,16 @@ const Homepage = () => {
               height={800}
               alt="Picture of the author"
             />
-            <div className="flex w-full md:justify-start justify-center mx-1 items-end">
-              <button className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 inline-flex text-white bg-indigo-500 border-1 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-              <Link href="/aboutUs">Explore</Link>
+            <div className="flex w-full md:justify-start justify-center mx-1 my-4 items-end">
+              <button className="transition ease-in-out delay-150 bg-[#8DD5FF] hover:-translate-y-1 hover:scale-110 hover:bg-[#8DD5FF] duration-300 inline-flex text-white bg-bg-[#8DD5FF] border-1 py-3 px-6 focus:outline-none hover:bg-bg-[#8DD5FF] rounded text-lg">
+              <Link href="/aboutUs">
+              <Image
+                  src={Explore}
+                  width={70}
+                  height={70}
+                  alt="Picture of the author"
+                />
+              </Link>
               </button>
             </div>
             <div className="flex lg:flex-row md:flex-col text-gray-300"></div>
@@ -87,9 +96,33 @@ const Homepage = () => {
             <div className="flex text-gray-300"></div>
           </div>
         </div>
-        <div className="container px-5 py-24 my-50 mx-auto">
-          <div className="w-full flex flex-col mb-16 items-center text-center0">
+        <div className="container mx-auto flex flex-col px-5 py-24 justify-center items-center">
+          <div className="w-full md:w-3/4 flex flex-col mb-16 items-center text-center">
           <Image
+                  src={text4}
+                  width={1800}
+                  height={500}
+                  alt="Picture of the author"
+                />
+            <div className="flex text-gray-300"></div>
+          </div>
+        </div>
+        <div className="container flex flex-col px-5 py-24 relative">
+          <div className="absolute right-0 flex flex-col mb-16">
+          <Link href={'./events'}>
+             <Image
+                  src={Footer}
+                  width={600}
+                  height={500}
+                  alt="Picture of the author"
+                />
+          </Link>
+          </div>
+        </div>
+        <div className="container px-5 py-24 my-50 mx-auto">
+          <div className="w-full flex flex-col mb-16">
+          <Image
+                  className=" mx-10"
                   src={Sponsors}
                   width={400}
                   height={600}
@@ -102,7 +135,7 @@ const Homepage = () => {
     </div>
     <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
       <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
-        <div class="rounded-lg h-84 overflow-hidden">
+        <div class="rounded-lg overflow-hidden">
         <Image
                   src={irc}
                   width={600}
@@ -112,7 +145,7 @@ const Homepage = () => {
         </div>
       </div>
       <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
-      <div class="rounded-lg h-84 overflow-hidden">
+      <div class="rounded-lg overflow-hidden">
         <Image
                   src={ASL}
                   width={600}
@@ -122,7 +155,7 @@ const Homepage = () => {
         </div>
       </div>
       <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
-      <div class="rounded-lg h-84 overflow-hidden">
+      <div class="rounded-lg overflow-hidden">
         <Image
                   src={lovin}
                   width={600}
@@ -132,7 +165,7 @@ const Homepage = () => {
         </div>
       </div>
       <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
-      <div class="rounded-lg h-84 overflow-hidden">
+      <div class="rounded-lg overflow-hidden">
         <Image
                   src={ari}
                   width={600}
