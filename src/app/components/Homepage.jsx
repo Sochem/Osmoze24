@@ -100,43 +100,39 @@ const Homepage = () => {
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col">
     </div>
-    <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-      <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
+    <div class="flex sm:-m-4 -mx-4 -mb-10 -mt-4 overflow-x-scroll">
+      <div class="p-4 h-84px sm:mb-0 mb-6">
         <div class="rounded-lg h-84 overflow-hidden">
-        <Image
+          <Image
                   src={irc}
-                  width={600}
-                  height={600}
+                  height={200}
                   alt="Picture of the author"
                 />
         </div>
       </div>
-      <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
+      <div class="p-4 h-84px sm:mb-0 mb-6">
       <div class="rounded-lg h-84 overflow-hidden">
         <Image
                   src={ASL}
-                  width={600}
-                  height={600}
+                  height={200}
                   alt="Picture of the author"
                 />
         </div>
       </div>
-      <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
+      <div class="p-4 sm:mb-0 mb-6">
       <div class="rounded-lg h-84 overflow-hidden">
         <Image
                   src={lovin}
-                  width={600}
-                  height={600}
+                  height={200}
                   alt="Picture of the author"
                 />
         </div>
       </div>
-      <div class="p-4 md:w-1/4 sm:mb-0 mb-6">
+      <div class="p-4   sm:mb-0 mb-6">
       <div class="rounded-lg h-84 overflow-hidden">
         <Image
                   src={ari}
-                  width={600}
-                  height={600}
+                  height={200}
                   alt="Picture of the author"
                 />
         </div>
