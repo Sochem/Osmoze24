@@ -140,7 +140,7 @@ const team = () => {
           </p>
         </div>
 
-        <div class="flex justify-center items-center -m-4 ">
+        <div class="flex justify-center items-center -m-4 ">  
           <div class="xl:w-1/5 md:w-1/5 p-2">
             <div class=" p-2 rounded-lg">
               <Image
@@ -161,13 +161,11 @@ const team = () => {
                 width={200}
                 height={200}
                 class="h-[200px] rounded w-full object-cover object-center mb-6"
-                src={
-                  Deepshikha
-                }
+                src={Pranjal}
                 alt="content"
               />
               <h3 class="tracking-widest text-indigo-500 text-xl text-white  font-medium title-font text-center  font-modern	">
-                Deepshikha Sinha
+                Pranjal Rajput
               </h3>
             </div>
           </div>
@@ -177,11 +175,13 @@ const team = () => {
                 width={200}
                 height={200}
                 class="h-[200px] rounded w-full object-cover object-center mb-6"
-                src={Pranjal}
+                src={
+                  Deepshikha
+                }
                 alt="content"
               />
               <h3 class="tracking-widest text-indigo-500 text-xl text-white  font-medium title-font text-center  font-modern	">
-                Pranjal Rajput
+                Deepshikha Sinha
               </h3>
             </div>
           </div>
