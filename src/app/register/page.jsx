@@ -43,7 +43,7 @@ const Page = () => {
     const newUser = {
       userName,
       branch,
-      email: email,
+      email: Cookies.get("Email"),
       year,
       phone,
       registeredEvents,
@@ -108,32 +108,32 @@ const Page = () => {
               >
                 Branch
               </label>
-              <select className="w-full p-2 border text-black border-gray-300 rounded "
-              value={branch}
-              onChange={(e) => setBranch(e.target.value)}> 
-                    <option></option>
-                    <option>Chemical Engineering</option>
-                    <option>Civil Engineering</option>
-                    <option>Computer Science and Engineering</option>
-                    <option>Electrical Engineering</option>
-                    <option>Electronics Engineering</option>
-                    <option>Mechanical Engineering</option> 
-                    <option>Metallurgical Engineering</option> 
-                    <option>Mining Engineering</option> 
-                    <option>Pharmaceutical Engineering and Technology</option> 
-                    <option>Ceramic Engineering and Technology</option> 
-                    <option>Architecture, Planning and Design</option> 
-                    <option>Department Of Chemistry</option> 
-                    <option>Department Of Mathematical Sciences</option> 
-                    <option>Department Of Physics</option> 
-                    <option>Biochemical Engineering</option> 
-                    <option>Biomedical Engineering</option> 
-                    <option>Materials Science and Technology</option> 
-                    <option>Department Of Humanistic Studies</option> 
-
-
+              <select
+                className="w-full p-2 border text-black border-gray-300 rounded "
+                value={branch}
+                onChange={(e) => setBranch(e.target.value)}
+              >
+                <option></option>
+                <option>Chemical Engineering</option>
+                <option>Civil Engineering</option>
+                <option>Computer Science and Engineering</option>
+                <option>Electrical Engineering</option>
+                <option>Electronics Engineering</option>
+                <option>Mechanical Engineering</option>
+                <option>Metallurgical Engineering</option>
+                <option>Mining Engineering</option>
+                <option>Pharmaceutical Engineering and Technology</option>
+                <option>Ceramic Engineering and Technology</option>
+                <option>Architecture, Planning and Design</option>
+                <option>Department Of Chemistry</option>
+                <option>Department Of Mathematical Sciences</option>
+                <option>Department Of Physics</option>
+                <option>Biochemical Engineering</option>
+                <option>Biomedical Engineering</option>
+                <option>Materials Science and Technology</option>
+                <option>Department Of Humanistic Studies</option>
               </select>
-  
+
               {/* <input
                 type="text"
                 id="username"
@@ -151,16 +151,18 @@ const Page = () => {
               >
                 Year
               </label>
-              <select className="w-full p-2 border text-black border-gray-300 rounded "
-              value={year}
-              onChange={(e) => setYear(e.target.value)}> 
-                    <option></option>
-                    <option>First Year</option>
-                    <option>Second Year</option>
-                    <option>Third Year</option>
-                    <option>Fourth Year</option>
-                    <option>Fifth Year</option>
-              </select>      
+              <select
+                className="w-full p-2 border text-black border-gray-300 rounded "
+                value={year}
+                onChange={(e) => setYear(e.target.value)}
+              >
+                <option></option>
+                <option>First Year</option>
+                <option>Second Year</option>
+                <option>Third Year</option>
+                <option>Fourth Year</option>
+                <option>Fifth Year</option>
+              </select>
               {/* <input
                 type="text"
                 id="year"
