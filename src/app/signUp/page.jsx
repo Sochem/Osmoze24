@@ -241,7 +241,7 @@ export default function Page() {
           <div className="flex flex-wrap">
             <div className="text-center w-full m-auto">
               <small className="text-grey-100 text-sm text-black ">
-                Already Registered?
+                <span className="p-1"> Already Registered? </span>
                 <span className="bg-cyan-500 text-white px-2 py-2 rounded ml-1 mr-1 mb-1 uppercase shadow-md hover:shadow-lg inline-flex items-center font-bold text-xs">
                   <Link href="/signIn">Login</Link>
                 </span>
