@@ -5,7 +5,7 @@ import Link from "next/link";
 import signIn from "../../../src/app/signIn/page.jsx";
 import { useEffect } from "react";
 import Image from "next/image";
-
+import Cookies from "js-cookie";
 const Navbar = () => {
   // document.addEventListener("DOMContentLoaded", function () {
   //   function updateUI() {
@@ -14,7 +14,7 @@ const Navbar = () => {
 
   //     if (!isLoggedIn) {
   //       authButton.setAttribute('value', 'Login');
-        
+
   //     } else {
   //       authButton.setAttribute('value', 'Logout');
   //     }
@@ -35,25 +35,29 @@ const Navbar = () => {
   //     });
   //   updateUI();
   // });
-  useEffect(() => {
-    // Ensure code only runs on the client-side
-    if (typeof document !== 'undefined' && typeof Cookies !== 'undefined') {
-        function updateUI() {
-            var authButton = document.getElementById("authButton");
-            var isLoggedIn = Cookies.get('User');
-            if (!isLoggedIn) {
-                authButton.innerText = "Login";
-            } else {
-                authButton.innerText = "Logout";
-            }
-        }
+  // useEffect(() => {
+  //   // Ensure code only runs on the client-side
+  //   if (typeof document !== "undefined" && typeof Cookies !== "undefined") {
+  //     function updateUI() {
+  //       var authButton = document.getElementById("authButton");
+  //       var isLoggedIn = Cookies.get("User");
+  //       if (!isLoggedIn) {
+  //         authButton.innerText = "Login";
+  //       } else {
+  //         authButton.innerText = "Logout";
+  //       }
+  //     }
 
-        // Run updateUI function when the DOM content is loaded
-        updateUI();
-
-    }
-}, []); 
-
+  //     // Run updateUI function when the DOM content is loaded
+  //     updateUI();
+  //   }
+  // }, []);
+  const isLoggedIn = Cookies.get("User");
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    document.cookie = "User=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.reload();
+  };
   return (
     <>
       <header className="sticky text-[#8DD5FF]  bg-[#09051B] lg:h-[80px] w-full lg:flex lg:align-middle font-serif shadow-md tracking-wide shadow-black/5 fixed">
@@ -73,9 +77,11 @@ const Navbar = () => {
                 Announcement
               </a>
             </li>
-            <li className=" hover:text-[1.26rem]">
-              <Link href="/dashBoard">Dashboard</Link>
-            </li>
+            {isLoggedIn && (
+              <li className="hover:text-[1.26rem]">
+                <Link href="/dashBoard">Dashboard</Link>
+              </li>
+            )}
           </ul>
 
           <div className=" order-first lg:order-first lg:w-1/5   lg:flex lg:justify-start m-0 p-0">
@@ -90,9 +96,18 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="  lg:w-1/5  order-last lg:flex lg:justify-end m-0 p-0">
-            <button className="bg-[#8DD5FF] test-s lg:text:base mt-2 rounded-md lg:h-[30px] h-[25px] lg:w-[70px] w-[50px] text-black hover:text-[1.05rem] hover:text-blue-700">
-              <Link href="/signUp">Register</Link>
-            </button>
+            {isLoggedIn ? (
+              <button
+                onClick={(e) => handleLogOut(e)}
+                className="bg-[#8DD5FF] test-s lg:text:base mt-2 rounded-md lg:h-[30px] h-[25px] lg:w-[70px] w-[50px] text-black hover:text-[1.05rem] hover:text-blue-700"
+              >
+                Log Out
+              </button>
+            ) : (
+              <button className="bg-[#8DD5FF] test-s lg:text:base mt-2 rounded-md lg:h-[30px] h-[25px] lg:w-[70px] w-[50px] text-black hover:text-[1.05rem] hover:text-blue-700">
+                <Link href="/signUp">Register</Link>
+              </button>
+            )}
           </div>
         </div>
       </header>
