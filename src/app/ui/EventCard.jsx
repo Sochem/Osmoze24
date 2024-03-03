@@ -89,7 +89,9 @@ const EventCard = ({ isOpen, id }) => {
                     </button>
                   </div>
 
-                  <h2 className="mb-6">Theme: {doc.theme}</h2>
+                  <h2 className="mb-7 font-semibold text-xl text-center">
+                    {doc.theme}
+                  </h2>
                   <span className="mt-50">{doc.description}</span>
                   <div className="grid grid-cols-6 gap-4 mt-6">
                     <div className="col-start-1 col-end-3 ">
