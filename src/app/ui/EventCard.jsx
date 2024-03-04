@@ -112,7 +112,7 @@ const EventCard = ({ isOpen, id }) => {
                   </div>
                   <div className="grid grid-cols-6 gap-4 mt-1">
                     <div className="col-start-1 col-end-3 mt-10 w-32">
-                      Prize Worth: XXX
+                      Prize Worth: {doc.prize}
                     </div>
                     <div className="col-end-7 col-span-2 ">
                       {" "}
