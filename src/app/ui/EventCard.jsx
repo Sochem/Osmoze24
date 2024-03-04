@@ -35,10 +35,16 @@ const EventCard = ({ isOpen, id }) => {
     console.log("closing again");
     setIsModalOpen(false);
   };
-  const checkIfValueExists = async (collectionName, fieldName, value) => {
+  const checkIfValueExists = async (
+    collectionName,
+    fieldName,
+    value,
+    userID
+  ) => {
     const q = query(
       collection(db, collectionName),
-      where(fieldName, "array-contains", value)
+      where(fieldName, "array-contains", value),
+      where("userId", "==", userID) // Add a condition to filter by userID
     );
     const querySnapshot = await getDocs(q);
     return !querySnapshot.empty;
@@ -49,11 +55,12 @@ const EventCard = ({ isOpen, id }) => {
     const valueExists = await checkIfValueExists(
       "users",
       "registeredEvents",
-      id
+      id,
+      userID
     );
 
     try {
-      if (id !== undefined && id !== "" && valueExists == false) {
+      if (id !== undefined && id !== "") {
         const updatedUser = {
           registeredEvents: arrayUnion(id),
         };
