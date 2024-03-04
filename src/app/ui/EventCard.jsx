@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import EventService from "../Services/event.js";
-import UserService from "../Services/services.js";
+import UserDataService from "../Services/services.js";
 import { UserAuth } from "../firebase/firebaseConfig";
+
 import toast from "react-hot-toast";
 import {
   doc,
@@ -20,7 +21,8 @@ import { arrayUnion } from "firebase/firestore";
 import Cookies from "js-cookie";
 
 const EventCard = ({ isOpen, id }) => {
-  const { events, setEvents, isModalOpen, setIsModalOpen } = UserAuth();
+  const { events, setEvents, isModalOpen, setIsModalOpen, setUsers, users } =
+    UserAuth();
   const userID = Cookies.get("User");
   useEffect(() => {
     const getEvent = async () => {
@@ -29,35 +31,34 @@ const EventCard = ({ isOpen, id }) => {
     };
     getEvent();
   }, []);
+  useEffect(() => {
+    const getUser = async () => {
+      const data = await UserDataService.getAllUser();
+      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    getUser();
+  }, []);
   const closeModal = (e) => {
     console.log("closing");
     e.preventDefault();
     console.log("closing again");
     setIsModalOpen(false);
   };
-  const checkIfValueExists = async (collectionName, fieldName, value) => {
-    const q = query(
-      collection(db, collectionName),
-      where(fieldName, "array-contains", value)
-    );
-    const querySnapshot = await getDocs(q);
-    return !querySnapshot.empty;
-  };
 
-  // Example usage:
   const handleRegister = async (e, id) => {
-    const valueExists = await checkIfValueExists(
-      "users",
-      "registeredEvents",
-      id
-    );
+    const userData = await UserDataService.getUser(userID);
+    let valueExist = false;
+    if (userData.exists()) {
+      const registeredEvents = userData.data().registeredEvents;
+      valueExist = registeredEvents.includes(id);
+    }
 
     try {
-      if (id !== undefined && id !== "" && valueExists == false) {
+      if (id !== undefined && id !== "" && valueExist == false) {
         const updatedUser = {
           registeredEvents: arrayUnion(id),
         };
-        await UserService.updateUser(userID, updatedUser);
+        await UserDataService.updateUser(userID, updatedUser);
 
         closeModal(e);
         toast.success("  You are successfully registered for the event! ");
