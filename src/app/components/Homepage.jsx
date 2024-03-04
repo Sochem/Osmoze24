@@ -21,10 +21,43 @@ import React, { useEffect, useState } from "react";
 
 const Homepage = () => {
 
+  window.addEventListener('scroll', function() {
+    var home = document.getElementById('home');
+    if (home) {
+      if (window.scrollY < 50) {
+        home.classList.add('opacity-100');
+        home.classList.remove('opacity-0');
+      }
+        if (window.scrollY > 50 && window.scrollY < 150) {
+          home.classList.add('opacity-75');
+          home.classList.remove('opacity-100');
+        }
+        if(window.scrollY > 150 && window.scrollY < 200) {
+          home.classList.add('opacity-50');
+          home.classList.remove('opacity-75');
+          home.classList.remove('opacity-100');
+        } 
+        if (window.scrollY > 200 && window.scrollY < 300) {
+          home.classList.add('opacity-25');
+          home.classList.remove('opacity-50');
+          home.classList.remove('opacity-100');
+        }
+        if (window.scrollY > 300) {
+          home.classList.add('opacity-0');
+          home.classList.remove('opacity-25');
+          home.classList.remove('opacity-100');
+        }
+        if (window.scrollY > 600) {
+          home.classList.remove('opacity-0');
+          home.classList.add('opacity-100');
+        }
+    }
+});
+
   return (
     <div >
       <section className="text-gray-400 body-font bg-cover min-h-screen grid place-item-center">
-        <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col relative">
+        <div id="home" className="container opacity-100 mx-auto flex px-5 py-24 items-center justify-center flex-col relative">
           <Image
             className="w-220 h-220 absolute top-1300 z-10"
             src={home}
